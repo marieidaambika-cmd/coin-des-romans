@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin des Romans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="index.html">📚 Coin des Romans</a>
+    <nav>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="romans.html">Romans</a>
+        <a href="auteurs.html">Auteurs</a>
+        <a href="favoris.html">❤️ Favoris</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button id="themeButton" class="theme-btn" aria-label="Changer le thème">🌙</button>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="small-title">BIENVENUE DANS</span>
+        <h1>Le Coin des <span>Romans</span></h1>
+        <p>Découvre des histoires fascinantes, des personnages inoubliables et des univers qui te feront voyager.</p>
+        <div class="hero-buttons">
+            <a href="romans.html" class="btn">📖 Découvrir les romans</a>
+            <a href="auteurs.html" class="btn secondary">✍️ Nos auteurs</a>
+        </div>
+    </div>
+    <div class="hero-book">
+        <div class="book-cover">
+            <span>📖</span>
+            <h2>Une histoire<br>commence ici...</h2>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>À DÉCOUVRIR</span>
+        <h2>Romans populaires</h2>
+        <p>Quelques histoires sélectionnées pour toi.</p>
+    </div>
+
+    <div class="roman-grid">
+        <article class="roman-card" data-genre="Mystère">
+            <div class="roman-cover cover-1">🏚️</div>
+            <div class="roman-info">
+                <span class="genre">Mystère</span>
+                <h3>Le Secret de la Maison</h3>
+                <p>Emma Laurent</p>
+                <button class="read-more" data-title="Le Secret de la Maison" data-author="Emma Laurent"
+                    data-summary="Une jeune fille découvre une vieille maison abandonnée et décide de comprendre les secrets qui entourent cet étrange endroit.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Romance">
+            <div class="roman-cover cover-2">🌅</div>
+            <div class="roman-info">
+                <span class="genre">Romance</span>
+                <h3>Un Été Inoubliable</h3>
+                <p>Clara Martin</p>
+                <button class="read-more" data-title="Un Été Inoubliable" data-author="Clara Martin"
+                    data-summary="Pendant un été plein de découvertes, deux jeunes personnes apprennent à mieux se connaître et voient leur quotidien changer.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Fantastique">
+            <div class="roman-cover cover-3">🏰</div>
+            <div class="roman-info">
+                <span class="genre">Fantastique</span>
+                <h3>Le Royaume Perdu</h3>
+                <p>Lucas Bernard</p>
+                <button class="read-more" data-title="Le Royaume Perdu" data-author="Lucas Bernard"
+                    data-summary="Un mystérieux royaume oublié réapparaît après plusieurs siècles. Une jeune héroïne doit découvrir pourquoi son existence a été cachée.">Lire le résumé</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="section-title">
+        <span>EXPLORE</span>
+        <h2>Choisis ton univers</h2>
+    </div>
+    <div class="category-grid">
+        <a href="romans.html" class="category-card">🔍 <h3>Mystère</h3></a>
+        <a href="romans.html" class="category-card">❤️ <h3>Romance</h3></a>
+        <a href="romans.html" class="category-card">🏰 <h3>Fantastique</h3></a>
+        <a href="romans.html" class="category-card">🎭 <h3>Drame</h3></a>
+    </div>
+</section>
+
+<section class="stats">
+    <div><strong>6+</strong><span>Romans</span></div>
+    <div><strong>6</strong><span>Auteurs</span></div>
+    <div><strong>4</strong><span>Genres</span></div>
+    <div><strong>∞</strong><span>Histoires à découvrir</span></div>
+</section>
+
+<section class="about">
+    <div>
+        <span>NOTRE UNIVERS</span>
+        <h2>Pourquoi le Coin des Romans ?</h2>
+        <p>Le Coin des Romans est un espace consacré aux passionnés de lecture. Notre objectif est de permettre aux lecteurs de découvrir facilement différents romans, genres et auteurs.</p>
+        <a href="romans.html" class="btn">Explorer la bibliothèque</a>
+    </div>
+</section>
+
+<footer>
+    <h3>📚 Coin des Romans</h3>
+    <p>Un livre, une histoire, un nouveau voyage.</p>
+    <p>© 2026 Coin des Romans — Tous droits réservés.</p>
+</footer>
+
+<div class="modal" id="romanModal">
+    <div class="modal-content">
+        <button class="close-modal" aria-label="Fermer">×</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalAuthor"></p>
+        <p id="modalSummary"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

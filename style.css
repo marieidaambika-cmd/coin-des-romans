@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f7f1e8;color:#2f1b1b;transition:background .3s,color .3s}
+a{color:inherit}
+button,input,textarea{font:inherit}
+.navbar{min-height:88px;background:#241414;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 7%;gap:25px;position:sticky;top:0;z-index:50;box-shadow:0 3px 15px #0002}
+.logo{text-decoration:none;font-size:29px;font-weight:bold;white-space:nowrap}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center}
+nav a{text-decoration:none;color:#fff;font-size:17px}
+nav a:hover,nav a.active{color:#e6b566}
+.theme-btn{width:54px;height:54px;border-radius:50%;border:1px solid #ffffff55;background:#ffffff12;color:#fff;cursor:pointer;font-size:22px}
+.hero{min-height:570px;padding:80px 9%;display:flex;align-items:center;justify-content:space-between;gap:60px;background:linear-gradient(135deg,#47231a,#74422e);color:#fff}
+.hero-content{max-width:680px}.small-title,.section-title>span,.about>div>span,.page-banner>span{letter-spacing:2px;font-weight:bold;color:#e6b566}
+.hero h1{font-size:64px;line-height:1.05;margin:15px 0}.hero h1 span{color:#e6b566}.hero p{font-size:19px;line-height:1.7;color:#f8e9da}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;border:0;background:#e6b566;color:#2f1b1b;text-decoration:none;padding:14px 22px;border-radius:8px;font-weight:bold;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn.secondary{background:transparent;color:#fff;border:1px solid #fff8}
+.hero-book{display:flex;justify-content:center;min-width:300px}.book-cover{width:245px;height:330px;border-radius:5px 14px 14px 5px;background:linear-gradient(145deg,#e6b566,#9b6130);box-shadow:22px 22px 0 #2b1713aa,0 20px 45px #0005;padding:40px 25px;text-align:center;color:#29140e;transform:rotate(3deg)}
+.book-cover span{font-size:70px}.book-cover h2{font-size:29px;line-height:1.3}
+.section{width:min(1180px,88%);margin:0 auto;padding:75px 0}.section-title{text-align:center;margin-bottom:42px}.section-title h2{font-size:38px;margin:10px 0}.section-title p{font-size:17px;color:#76594c}
+.roman-grid,.author-grid,.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:25px}
+.roman-card,.author-card{background:#fff;border:1px solid #e4d9cc;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #3d2b1f12;transition:.25s}
+.roman-card:hover,.author-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #3d2b1f22}
+.roman-cover{height:190px;display:flex;align-items:center;justify-content:center;font-size:75px;background:#ead9c6}.cover-1{background:linear-gradient(135deg,#b98b68,#e6c6a5)}.cover-2{background:linear-gradient(135deg,#e7a56e,#f4d5aa)}.cover-3{background:linear-gradient(135deg,#8770a0,#cdb8df)}.cover-4{background:linear-gradient(135deg,#4a414e,#9a879e)}.cover-5{background:linear-gradient(135deg,#8c6b55,#d4b69c)}.cover-6{background:linear-gradient(135deg,#27365e,#6c7db4)}
+.roman-info{padding:22px}.genre,.author-card>span{display:inline-block;background:#e6b566;color:#2f1b1b;border-radius:20px;padding:5px 11px;font-size:12px;font-weight:bold}.roman-info h3{margin:12px 0 6px;font-size:22px}.roman-info p{color:#76594c}.read-more,.favorite-btn{border:0;cursor:pointer;border-radius:7px;padding:9px 12px}.read-more{background:#4b2e2e;color:#fff}.favorite-btn{background:#f5e8da;color:#8b2f2f;font-size:20px;margin-right:7px}.favorite-btn.active{background:#ffe0e0}
+.categories{padding:70px 7%;background:#efe4d5}.category-grid{max-width:1100px;margin:auto}.category-card{background:#fff;padding:28px;border-radius:14px;text-align:center;text-decoration:none;box-shadow:0 8px 22px #3d2b1f12}.category-card h3{margin:12px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#4b2e2e;color:#fff;text-align:center}.stats div{padding:35px 15px;border-right:1px solid #ffffff22}.stats strong{display:block;font-size:35px;color:#e6b566}.stats span{font-size:15px}
+.about{padding:85px 9%;background:#fff}.about>div{max-width:800px}.about h2{font-size:38px}.about p{font-size:18px;line-height:1.8;color:#654d42}
+.page-banner{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#452219,#75452f);color:#fff}.page-banner h1{font-size:65px;margin:18px 0}.page-banner p{font-size:19px;color:#f7e9db}
+.search-box{max-width:750px;margin:0 auto 25px;background:#fff;border:1px solid #dccfc1;border-radius:10px;padding:14px 18px;font-size:20px}.search-box input{border:0;outline:0;width:90%;font-size:17px;background:transparent}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:35px}.filter-btn{border:1px solid #d1b99e;background:#fff;color:#4b2e2e;padding:10px 17px;border-radius:20px;cursor:pointer}.filter-btn.active{background:#4b2e2e;color:#fff}
+.authors-section{background:#f7f1e8}.author-card{text-align:center;padding:40px 25px}.author-avatar{width:112px;height:112px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#75452f,#e6b566);font-size:48px;color:#2f1b1b}.author-card h3{font-size:25px;margin:10px 0}.author-card p{line-height:1.6;color:#76594c}
+.contact-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.contact-intro h2{font-size:38px}.contact-intro>p{font-size:18px;line-height:1.8;color:#654d42}.contact-details p{line-height:1.8;font-size:17px}.contact-form{background:#fff;padding:30px;border-radius:18px;box-shadow:0 10px 30px #3d2b1f12}.contact-form label{display:block;margin:0 0 7px;font-weight:bold}.contact-form input,.contact-form textarea{width:100%;padding:13px;margin-bottom:18px;border:1px solid #d8cabc;border-radius:8px;outline:0;background:#fff}.contact-form input:focus,.contact-form textarea:focus{border-color:#a36b43}.contact-form .btn{width:100%}
+.empty-message{text-align:center;padding:40px;font-size:18px;color:#76594c}.empty-message a{color:#8b5b37;font-weight:bold}
+footer{background:#241414;color:#fff;text-align:center;padding:35px 20px}footer h3{font-size:23px;color:#e6b566}footer p{color:#dbc8b8}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal.show{display:flex}.modal-content{max-width:600px;width:100%;background:#fff;border-radius:18px;padding:35px;position:relative;box-shadow:0 20px 70px #0007}.modal-content h2{color:#4b2e2e}.close-modal{position:absolute;right:14px;top:10px;border:0;background:transparent;font-size:34px;cursor:pointer}
+body.dark{background:#1d1513;color:#f7eee6}body.dark .section-title p,body.dark .roman-info p,body.dark .author-card p,body.dark .about p,body.dark .empty-message{color:#cdbdb0}body.dark .roman-card,body.dark .author-card,body.dark .contact-form,body.dark .modal-content,body.dark .search-box,body.dark .filter-btn,body.dark .category-card{background:#2b201d;color:#f7eee6;border-color:#493a34}body.dark .categories,body.dark .about{background:#251b18}body.dark .contact-form input,body.dark .contact-form textarea{background:#201715;color:#fff;border-color:#59463d}body.dark .favorite-btn{background:#493431;color:#ffb2b2}body.dark .page-banner{background:linear-gradient(135deg,#2b1712,#543022)}
+@media(max-width:900px){.navbar{padding:15px 5%;flex-wrap:wrap;justify-content:center}.logo{width:100%;text-align:center}.hero{flex-direction:column;text-align:center;padding:60px 7%}.hero h1{font-size:47px}.hero-buttons{justify-content:center}.page-banner h1{font-size:47px}.contact-section{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){nav{gap:10px}nav a{font-size:14px}.hero-book{min-width:0}.book-cover{width:205px;height:275px}.stats{grid-template-columns:1fr}.section{width:92%}}

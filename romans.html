@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romans - Coin des Romans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="index.html">📚 Coin des Romans</a>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="romans.html" class="active">Romans</a>
+        <a href="auteurs.html">Auteurs</a>
+        <a href="favoris.html">❤️ Favoris</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button id="themeButton" class="theme-btn">🌙</button>
+</header>
+
+<section class="page-banner">
+    <span>📚 BIBLIOTHÈQUE</span>
+    <h1>Nos Romans</h1>
+    <p>Explore notre collection d'histoires.</p>
+</section>
+
+<section class="section">
+    <div class="search-box">🔎 <input type="text" id="searchInput" placeholder="Rechercher un roman ou un auteur..."></div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-genre="Tous">Tous</button>
+        <button class="filter-btn" data-genre="Mystère">Mystère</button>
+        <button class="filter-btn" data-genre="Romance">Romance</button>
+        <button class="filter-btn" data-genre="Fantastique">Fantastique</button>
+        <button class="filter-btn" data-genre="Drame">Drame</button>
+    </div>
+
+    <div class="roman-grid">
+        <article class="roman-card" data-genre="Mystère">
+            <div class="roman-cover cover-1">🏚️</div>
+            <div class="roman-info">
+                <span class="genre">Mystère</span><h3>Le Secret de la Maison</h3><p>Emma Laurent</p>
+                <button class="favorite-btn" data-title="Le Secret de la Maison">♡</button>
+                <button class="read-more" data-title="Le Secret de la Maison" data-author="Emma Laurent" data-summary="Une jeune fille découvre une vieille maison abandonnée et cherche à découvrir les secrets de son passé.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Romance">
+            <div class="roman-cover cover-2">🌅</div>
+            <div class="roman-info">
+                <span class="genre">Romance</span><h3>Un Été Inoubliable</h3><p>Clara Martin</p>
+                <button class="favorite-btn" data-title="Un Été Inoubliable">♡</button>
+                <button class="read-more" data-title="Un Été Inoubliable" data-author="Clara Martin" data-summary="Un été rempli de rencontres et de découvertes qui va changer la vie de deux jeunes personnes.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Fantastique">
+            <div class="roman-cover cover-3">🏰</div>
+            <div class="roman-info">
+                <span class="genre">Fantastique</span><h3>Le Royaume Perdu</h3><p>Lucas Bernard</p>
+                <button class="favorite-btn" data-title="Le Royaume Perdu">♡</button>
+                <button class="read-more" data-title="Le Royaume Perdu" data-author="Lucas Bernard" data-summary="Un royaume oublié réapparaît mystérieusement et révèle une ancienne histoire à une jeune aventurière.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Drame">
+            <div class="roman-cover cover-4">🌑</div>
+            <div class="roman-info">
+                <span class="genre">Drame</span><h3>Les Ombres du Passé</h3><p>Sophie Morel</p>
+                <button class="favorite-btn" data-title="Les Ombres du Passé">♡</button>
+                <button class="read-more" data-title="Les Ombres du Passé" data-author="Sophie Morel" data-summary="Une jeune femme revient dans sa ville natale et doit affronter les souvenirs qu'elle avait laissés derrière elle.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Mystère">
+            <div class="roman-cover cover-5">🚪</div>
+            <div class="roman-info">
+                <span class="genre">Mystère</span><h3>La Porte Fermée</h3><p>Julie Moreau</p>
+                <button class="favorite-btn" data-title="La Porte Fermée">♡</button>
+                <button class="read-more" data-title="La Porte Fermée" data-author="Julie Moreau" data-summary="Une porte mystérieuse apparaît dans une ancienne demeure. Personne ne sait ce qu'elle cache.">Lire le résumé</button>
+            </div>
+        </article>
+
+        <article class="roman-card" data-genre="Fantastique">
+            <div class="roman-cover cover-6">🌌</div>
+            <div class="roman-info">
+                <span class="genre">Fantastique</span><h3>Le Monde Caché</h3><p>Nicolas Roy</p>
+                <button class="favorite-btn" data-title="Le Monde Caché">♡</button>
+                <button class="read-more" data-title="Le Monde Caché" data-author="Nicolas Roy" data-summary="Un monde invisible aux yeux des humains existe juste à côté du nôtre. Un jeune étudiant découvre comment y entrer.">Lire le résumé</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+<footer><h3>📚 Coin des Romans</h3><p>Un livre, une histoire, un nouveau voyage.</p><p>© 2026 Coin des Romans</p></footer>
+
+<div class="modal" id="romanModal">
+    <div class="modal-content"><button class="close-modal">×</button><h2 id="modalTitle"></h2><p id="modalAuthor"></p><p id="modalSummary"></p></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

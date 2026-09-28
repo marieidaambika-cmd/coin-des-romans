@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Coin des Romans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="index.html">📚 Coin des Romans</a>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="romans.html">Romans</a>
+        <a href="auteurs.html">Auteurs</a>
+        <a href="favoris.html">❤️ Favoris</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button id="themeButton" class="theme-btn">🌙</button>
+</header>
+
+<section class="page-banner">
+    <span>💌 CONTACT</span>
+    <h1>Contacte-nous</h1>
+    <p>Une question, une suggestion ou simplement envie de parler de lecture ?</p>
+</section>
+
+<section class="section contact-section">
+    <div class="contact-intro">
+        <span>📚 COIN DES ROMANS</span>
+        <h2>Parlons littérature</h2>
+        <p>Tu peux nous envoyer un message pour partager tes suggestions, proposer un roman ou poser une question.</p>
+        <div class="contact-details">
+            <p>📧 <strong>Email</strong><br>contact@coindesromans.com</p>
+            <p>📍 <strong>Lieu</strong><br>Kinshasa, RDC</p>
+        </div>
+    </div>
+
+    <form id="contactForm" class="contact-form">
+        <label for="name">Nom</label>
+        <input id="name" name="name" type="text" placeholder="Ton nom" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Ton adresse email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="7" placeholder="Écris ton message..." required></textarea>
+
+        <button class="btn" type="submit">📩 Envoyer le message</button>
+    </form>
+</section>
+
+<footer><h3>📚 Coin des Romans</h3><p>Un livre, une histoire, un nouveau voyage.</p><p>© 2026 Coin des Romans</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
