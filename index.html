@@ -6,10 +6,12 @@
     <title>Coin des Romans</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
-    <a class="logo" href="index.html">📚 Coin des Romans</a>
+    <a href="index.html" class="logo">📚 <span>Coin des Romans</span></a>
+
     <nav>
         <a href="index.html" class="active">Accueil</a>
         <a href="romans.html">Romans</a>
@@ -17,114 +19,271 @@
         <a href="favoris.html">❤️ Favoris</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <button id="themeButton" class="theme-btn" aria-label="Changer le thème">🌙</button>
+
+    <button id="themeButton" class="theme-btn">🌙</button>
 </header>
+
+<main>
 
 <section class="hero">
     <div class="hero-content">
-        <span class="small-title">BIENVENUE DANS</span>
-        <h1>Le Coin des <span>Romans</span></h1>
-        <p>Découvre des histoires fascinantes, des personnages inoubliables et des univers qui te feront voyager.</p>
+        <span class="small-title">✨ BIENVENUE DANS TON UNIVERS</span>
+
+        <h1>
+            Une histoire.
+            <br>
+            <span>Un autre monde.</span>
+        </h1>
+
+        <p>
+            Découvre des romans captivants, des personnages inoubliables
+            et des histoires qui te feront voyager sans quitter ton fauteuil.
+        </p>
+
         <div class="hero-buttons">
-            <a href="romans.html" class="btn">📖 Découvrir les romans</a>
-            <a href="auteurs.html" class="btn secondary">✍️ Nos auteurs</a>
+            <a href="romans.html" class="btn">📖 Explorer les romans</a>
+            <a href="auteurs.html" class="btn secondary">✍️ Découvrir les auteurs</a>
         </div>
     </div>
+
     <div class="hero-book">
+        <div class="floating-star star1">✦</div>
+        <div class="floating-star star2">✧</div>
+
         <div class="book-cover">
             <span>📖</span>
+            <small>COIN DES ROMANS</small>
             <h2>Une histoire<br>commence ici...</h2>
+            <div class="book-line"></div>
+            <p>Lire • Rêver • Voyager</p>
         </div>
     </div>
 </section>
 
+
+<section class="roman-du-jour">
+    <div class="roman-jour-content">
+        <span>📖 À LIRE AUJOURD'HUI</span>
+        <h2>Le Secret de la Maison</h2>
+
+        <p>
+            Une jeune fille découvre une vieille maison abandonnée et décide
+            de percer les secrets qui entourent cet étrange endroit.
+        </p>
+
+        <a href="romans.html" class="btn">Découvrir le roman →</a>
+    </div>
+
+    <div class="roman-jour-icon">
+        🏚️
+    </div>
+</section>
 <section class="section">
     <div class="section-title">
-        <span>À DÉCOUVRIR</span>
+        <span>⭐ SÉLECTION</span>
         <h2>Romans populaires</h2>
-        <p>Quelques histoires sélectionnées pour toi.</p>
+        <p>Quelques histoires sélectionnées pour commencer ton voyage.</p>
     </div>
 
     <div class="roman-grid">
+
         <article class="roman-card" data-genre="Mystère">
-            <div class="roman-cover cover-1">🏚️</div>
+            <div class="roman-cover">
+                <button class="favorite-btn" data-title="Le Secret de la Maison">♡</button>
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Le Secret de la Maison" class="book-img">
+            </div>
+
             <div class="roman-info">
                 <span class="genre">Mystère</span>
                 <h3>Le Secret de la Maison</h3>
                 <p>Emma Laurent</p>
-                <button class="read-more" data-title="Le Secret de la Maison" data-author="Emma Laurent"
-                    data-summary="Une jeune fille découvre une vieille maison abandonnée et décide de comprendre les secrets qui entourent cet étrange endroit.">Lire le résumé</button>
+
+                <button
+                    class="read-more"
+                    data-title="Le Secret de la Maison"
+                    data-author="Emma Laurent"
+                    data-summary="Une jeune fille découvre une vieille maison abandonnée et décide de comprendre les secrets qui entourent cet étrange endroit.">
+                    Lire le résumé →
+                </button>
             </div>
         </article>
 
+
         <article class="roman-card" data-genre="Romance">
-            <div class="roman-cover cover-2">🌅</div>
+            <div class="roman-cover">
+                <button class="favorite-btn" data-title="Un Été Inoubliable">♡</button>
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Un Été Inoubliable" class="book-img">
+            </div>
+
             <div class="roman-info">
                 <span class="genre">Romance</span>
                 <h3>Un Été Inoubliable</h3>
                 <p>Clara Martin</p>
-                <button class="read-more" data-title="Un Été Inoubliable" data-author="Clara Martin"
-                    data-summary="Pendant un été plein de découvertes, deux jeunes personnes apprennent à mieux se connaître et voient leur quotidien changer.">Lire le résumé</button>
+
+                <button
+                    class="read-more"
+                    data-title="Un Été Inoubliable"
+                    data-author="Clara Martin"
+                    data-summary="Pendant un été plein de découvertes, deux jeunes personnes apprennent à mieux se connaître et voient leur quotidien changer.">
+                    Lire le résumé →
+                </button>
             </div>
         </article>
 
+
         <article class="roman-card" data-genre="Fantastique">
-            <div class="roman-cover cover-3">🏰</div>
+            <div class="roman-cover">
+                <button class="favorite-btn" data-title="Le Royaume Perdu">♡</button>
+                <img src="https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=800&auto=format&fit=crop" alt="Le Royaume Perdu" class="book-img">
+            </div>
+
             <div class="roman-info">
                 <span class="genre">Fantastique</span>
                 <h3>Le Royaume Perdu</h3>
                 <p>Lucas Bernard</p>
-                <button class="read-more" data-title="Le Royaume Perdu" data-author="Lucas Bernard"
-                    data-summary="Un mystérieux royaume oublié réapparaît après plusieurs siècles. Une jeune héroïne doit découvrir pourquoi son existence a été cachée.">Lire le résumé</button>
+
+                <button
+                    class="read-more"
+                    data-title="Le Royaume Perdu"
+                    data-author="Lucas Bernard"
+                    data-summary="Un mystérieux royaume oublié réapparaît après plusieurs siècles. Une jeune héroïne doit découvrir pourquoi son existence a été cachée.">
+                    Lire le résumé →
+                </button>
             </div>
         </article>
+
+    </div>
+
+    <div class="center-button">
+        <a href="romans.html" class="outline-btn">Voir toute la bibliothèque →</a>
     </div>
 </section>
 
 <section class="categories">
     <div class="section-title">
-        <span>EXPLORE</span>
+        <span>🧭 EXPLORE</span>
         <h2>Choisis ton univers</h2>
+        <p>Quelle histoire vas-tu découvrir aujourd'hui ?</p>
     </div>
+
     <div class="category-grid">
-        <a href="romans.html" class="category-card">🔍 <h3>Mystère</h3></a>
-        <a href="romans.html" class="category-card">❤️ <h3>Romance</h3></a>
-        <a href="romans.html" class="category-card">🏰 <h3>Fantastique</h3></a>
-        <a href="romans.html" class="category-card">🎭 <h3>Drame</h3></a>
+
+        <a href="romans.html" class="category-card">
+            <div class="category-icon">🔍</div>
+            <h3>Mystère</h3>
+            <p>Secrets et énigmes</p>
+        </a>
+
+        <a href="romans.html" class="category-card">
+            <div class="category-icon">❤️</div>
+            <h3>Romance</h3>
+            <p>Histoires de cœur</p>
+        </a>
+
+        <a href="romans.html" class="category-card">
+            <div class="category-icon">🏰</div>
+            <h3>Fantastique</h3>
+            <p>Des mondes extraordinaires</p>
+        </a>
+
+        <a href="romans.html" class="category-card">
+            <div class="category-icon">🎭</div>
+            <h3>Drame</h3>
+            <p>Des histoires intenses</p>
+        </a>
+
     </div>
 </section>
+
 
 <section class="stats">
-    <div><strong>6+</strong><span>Romans</span></div>
-    <div><strong>6</strong><span>Auteurs</span></div>
-    <div><strong>4</strong><span>Genres</span></div>
-    <div><strong>∞</strong><span>Histoires à découvrir</span></div>
-</section>
-
-<section class="about">
     <div>
-        <span>NOTRE UNIVERS</span>
-        <h2>Pourquoi le Coin des Romans ?</h2>
-        <p>Le Coin des Romans est un espace consacré aux passionnés de lecture. Notre objectif est de permettre aux lecteurs de découvrir facilement différents romans, genres et auteurs.</p>
-        <a href="romans.html" class="btn">Explorer la bibliothèque</a>
+        <strong>6+</strong>
+        <span>Romans</span>
+    </div>
+
+    <div>
+        <strong>6</strong>
+        <span>Auteurs</span>
+    </div>
+
+    <div>
+        <strong>4</strong>
+        <span>Genres</span>
+    </div>
+
+    <div>
+        <strong>∞</strong>
+        <span>Histoires</span>
     </div>
 </section>
 
+
+<section class="about">
+    <div class="about-content">
+        <span>📚 NOTRE UNIVERS</span>
+
+        <h2>Plus qu'un site,<br>un endroit pour rêver.</h2>
+
+        <p>
+            Le Coin des Romans est un espace consacré aux passionnés de lecture.
+            Notre objectif est de permettre aux lecteurs de découvrir facilement
+            différents romans, genres et auteurs.
+        </p>
+
+        <a href="romans.html" class="btn">Explorer la bibliothèque →</a>
+    </div>
+
+    <div class="about-decoration">
+        <span>“</span>
+        <p>Chaque livre ouvre<br>une nouvelle porte.</p>
+    </div>
+</section>
+
+</main>
+
+
 <footer>
-    <h3>📚 Coin des Romans</h3>
-    <p>Un livre, une histoire, un nouveau voyage.</p>
-    <p>© 2026 Coin des Romans — Tous droits réservés.</p>
+    <div class="footer-content">
+
+        <div>
+            <h3>📚 Coin des Romans</h3>
+            <p>Un livre, une histoire, un nouveau voyage.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="romans.html">Romans</a>
+            <a href="auteurs.html">Auteurs</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Coin des Romans — Tous droits réservés.
+    </div>
 </footer>
+
 
 <div class="modal" id="romanModal">
     <div class="modal-content">
+
         <button class="close-modal" aria-label="Fermer">×</button>
+
+        <span>📖 ROMAN</span>
+
         <h2 id="modalTitle"></h2>
-        <p id="modalAuthor"></p>
+
+        <p class="modal-author" id="modalAuthor"></p>
+
         <p id="modalSummary"></p>
+
     </div>
 </div>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>

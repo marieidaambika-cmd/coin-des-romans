@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoris - Coin des Romans</title>
+    <title>Mes Favoris - Coin des Romans</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,24 +14,43 @@
         <a href="index.html">Accueil</a>
         <a href="romans.html">Romans</a>
         <a href="auteurs.html">Auteurs</a>
-        <a href="favoris.html" class="active">❤️ Favoris</a>
+        <a href="favoris.html" class="active">❤️ Favoris (<span id="favoriteCount">0</span>)</a>
         <a href="contact.html">Contact</a>
     </nav>
     <button id="themeButton" class="theme-btn">🌙</button>
 </header>
 
 <section class="page-banner">
-    <span>❤️ MA BIBLIOTHÈQUE</span>
-    <h1>Mes Favoris</h1>
-    <p>Retrouve ici les romans que tu as ajoutés à tes favoris.</p>
+    <span>❤️ VOTRE SÉLECTION</span>
+    <h1>Mes Romans Favoris</h1>
+    <p>Retrouvez ici toutes les histoires que vous avez enregistrées.</p>
 </section>
 
 <section class="section">
-    <div id="favoritesContainer" class="roman-grid"></div>
-    <p id="emptyFavorites" class="empty-message">❤️ Tes romans favoris apparaîtront ici.<br><br>Va dans <a href="romans.html">Romans</a> pour en ajouter.</p>
+    <!-- Grille qui recevra automatiquement les cartes en favoris -->
+    <div class="roman-grid" id="favoritesGrid"></div>
+
+    <!-- Message si aucun favori -->
+    <p id="noFavorites" class="no-results" style="display: none; text-align: center; font-size: 1.2rem; margin: 3rem 0;">
+        💔 Vous n'avez encore aucun roman dans vos favoris.<br>
+        <a href="romans.html" style="color: var(--gold, #d4af37); text-decoration: underline; margin-top: 1rem; display: inline-block;">Découvrir notre catalogue →</a>
+    </p>
 </section>
 
-<footer><h3>📚 Coin des Romans</h3><p>Un livre, une histoire, un nouveau voyage.</p><p>© 2026 Coin des Romans</p></footer>
+<footer>
+    <h3>📚 Coin des Romans</h3>
+    <p>Un livre, une histoire, un nouveau voyage.</p>
+    <p>© 2026 Coin des Romans</p>
+</footer>
+
+<div class="modal" id="romanModal">
+    <div class="modal-content">
+        <button class="close-modal">×</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalAuthor"></p>
+        <p id="modalSummary"></p>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
