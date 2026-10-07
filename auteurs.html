@@ -1,212 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Coin des Romans — Auteurs</title>
-
+    <title>Auteurs — Coin des Romans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header class="navbar">
-
-    <a href="index.html" class="logo">
-        📚 <span>Coin des Romans</span>
-    </a>
+    <a href="index.html" class="logo"><span>📖</span> Coin des Romans</a>
 
     <nav>
-
         <a href="index.html">Accueil</a>
-
         <a href="romans.html">Romans</a>
-
         <a href="auteurs.html" class="active">Auteurs</a>
-
-        <a href="favoris.html">
-            ❤️ Favoris
-            <span id="favoriteCount">0</span>
-        </a>
-
+        <a href="favoris.html">❤️ Favoris <span id="favoriteCount">0</span></a>
         <a href="contact.html">Contact</a>
-
-        <button id="themeButton">🌙</button>
-
     </nav>
 
+    <button id="themeButton" class="theme-btn">🌙</button>
 </header>
-
 
 <main>
 
 <section class="page-header">
-
-    <span class="gold-badge">✍️ Plumes à découvrir</span>
-
-    <h1>Nos Auteurs</h1>
-
-    <p>
-        Découvre les écrivains derrière tes prochaines histoires préférées.
-    </p>
-
+    <span class="eyebrow">NOS PLUMES</span>
+    <h1>Les <span>Auteurs</span></h1>
+    <p>Découvre les personnes derrière les histoires.</p>
 </section>
 
+<section class="authors">
 
-<section class="section">
+    <article class="author-card">
+        <div class="author-avatar">RY</div>
+        <h2>Rebecca Yarros</h2>
+        <p>Fantasy & Romance</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
-    <div class="author-grid">
+    <article class="author-card">
+        <div class="author-avatar">RR</div>
+        <h2>Rebecca Ross</h2>
+        <p>Romance & Fantastique</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
+    <article class="author-card">
+        <div class="author-avatar">AH</div>
+        <h2>Ali Hazelwood</h2>
+        <p>Romance</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
-        <article class="author-card">
+    <article class="author-card">
+        <div class="author-avatar">HJ</div>
+        <h2>Holly Jackson</h2>
+        <p>Mystère</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
-            <div class="author-avatar">T</div>
+    <article class="author-card">
+        <div class="author-avatar">SG</div>
+        <h2>Stephanie Garber</h2>
+        <p>Fantastique</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
-            <h2>Tomi Adeyemi</h2>
-
-            <span>Fantasy</span>
-
-            <p>
-                Autrice de la série Legacy of Orïsha,
-                connue pour ses univers fantastiques.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-
-        <article class="author-card">
-
-            <div class="author-avatar">M</div>
-
-            <h2>Molly X. Chang</h2>
-
-            <span>Fantasy</span>
-
-            <p>
-                Autrice de romans mêlant fantasy,
-                magie, destin et romance.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-
-        <article class="author-card">
-
-            <div class="author-avatar">L</div>
-
-            <h2>Lynn Painter</h2>
-
-            <span>Romance</span>
-
-            <p>
-                Autrice de romances contemporaines
-                pleines d'humour et d'émotions.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-
-        <article class="author-card">
-
-            <div class="author-avatar">H</div>
-
-            <h2>Holly Jackson</h2>
-
-            <span>Mystère</span>
-
-            <p>
-                Autrice connue pour ses romans
-                policiers et ses intrigues pleines de mystères.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-
-        <article class="author-card">
-
-            <div class="author-avatar">T</div>
-
-            <h2>Tracy Deonn</h2>
-
-            <span>Fantastique</span>
-
-            <p>
-                Autrice de Legendborn, une histoire
-                mêlant magie, légendes et aventure.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-
-        <article class="author-card">
-
-            <div class="author-avatar">R</div>
-
-            <h2>Rachael Lippincott</h2>
-
-            <span>Drame</span>
-
-            <p>
-                Autrice de romances et de drames
-                destinés principalement aux jeunes lecteurs.
-            </p>
-
-            <a href="romans.html" class="outline-btn">
-                📚 Voir ses romans
-            </a>
-
-        </article>
-
-    </div>
+    <article class="author-card">
+        <div class="author-avatar">LP</div>
+        <h2>Lynn Painter</h2>
+        <p>Romance</p>
+        <a href="romans.html" class="small-link">Voir ses romans →</a>
+    </article>
 
 </section>
 
 </main>
 
-
 <footer>
-
-    <h3>📚 Coin des Romans</h3>
-
-    <p>Un livre, une histoire, un nouveau voyage.</p>
-
-    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
-
+    <p>© 2026 <strong>Coin des Romans</strong> — Un livre, une histoire, un nouveau voyage.</p>
 </footer>
 
-
 <script src="script.js"></script>
-
 </body>
 </html>

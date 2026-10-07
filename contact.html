@@ -1,164 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Coin des Romans — Contact</title>
-
+    <title>Contact — Coin des Romans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header class="navbar">
-
-    <a href="index.html" class="logo">
-        📚 <span>Coin des Romans</span>
-    </a>
+    <a href="index.html" class="logo"><span>📖</span> Coin des Romans</a>
 
     <nav>
-
         <a href="index.html">Accueil</a>
-
         <a href="romans.html">Romans</a>
-
         <a href="auteurs.html">Auteurs</a>
-
-        <a href="favoris.html">
-            ❤️ Favoris
-            <span id="favoriteCount">0</span>
-        </a>
-
+        <a href="favoris.html">❤️ Favoris <span id="favoriteCount">0</span></a>
         <a href="contact.html" class="active">Contact</a>
-
-        <button id="themeButton">🌙</button>
-
     </nav>
 
+    <button id="themeButton" class="theme-btn">🌙</button>
 </header>
-
 
 <main>
 
 <section class="page-header">
-
-    <span class="gold-badge">💌 Parlons lecture</span>
-
-    <h1>Contact</h1>
-
-    <p>
-        Une suggestion de roman ? Une question ?
-        Écris-nous.
-    </p>
-
+    <span class="eyebrow">UN MOT ?</span>
+    <h1>Nous <span>contacter</span></h1>
+    <p>Une suggestion de roman ? Une question ? Écris-nous.</p>
 </section>
-
 
 <section class="contact-section">
 
     <div class="contact-info">
-
-        <span class="gold-badge">📚 Coin des Romans</span>
-
-        <h2>
-            Une idée ou un roman à proposer ?
-        </h2>
-
-        <p>
-            Le site est pensé pour évoluer.
-            Tu peux utiliser ce formulaire pour proposer
-            un roman, un auteur ou une amélioration.
-        </p>
-
-        <div class="contact-details">
-
-            <div>
-                📖
-                <strong>Romans</strong>
-                <span>Propose ton prochain coup de cœur</span>
-            </div>
-
-            <div>
-                ✍️
-                <strong>Auteurs</strong>
-                <span>Découvre et recommande des auteurs</span>
-            </div>
-
-            <div>
-                💡
-                <strong>Suggestions</strong>
-                <span>Partage tes idées pour le site</span>
-            </div>
-
+        <div class="contact-card">
+            <span>📚</span>
+            <h3>Une suggestion</h3>
+            <p>Propose-nous un roman que tu aimerais voir apparaître sur le site.</p>
         </div>
 
-    </div>
+        <div class="contact-card">
+            <span>💌</span>
+            <h3>Une question</h3>
+            <p>Tu peux nous écrire directement grâce au formulaire.</p>
+        </div>
 
+        <div class="contact-card">
+            <span>✨</span>
+            <h3>Une idée</h3>
+            <p>Tes idées peuvent aider à améliorer Coin des Romans.</p>
+        </div>
+    </div>
 
     <form id="contactForm" class="contact-form">
 
-        <label for="name">
-            Nom
-        </label>
+        <label for="name">Nom</label>
+        <input id="name" type="text" placeholder="Ton nom" required>
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Ton nom"
-            required
-        >
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="tonemail@example.com" required>
 
+        <label for="message">Message</label>
+        <textarea id="message" rows="7" placeholder="Écris ton message ici..." required></textarea>
 
-        <label for="email">
-            Email
-        </label>
+        <button type="submit" class="btn btn-gold">Envoyer le message ✨</button>
 
-        <input
-            type="email"
-            id="email"
-            placeholder="ton@email.com"
-            required
-        >
-
-
-        <label for="subject">
-            Sujet
-        </label>
-
-        <input
-            type="text"
-            id="subject"
-            placeholder="Sujet de ton message"
-            required
-        >
-
-
-        <label for="message">
-            Message
-        </label>
-
-        <textarea
-            id="message"
-            rows="6"
-            placeholder="Écris ton message ici..."
-            required
-        ></textarea>
-
-
-        <button type="submit" class="main-btn">
-            ✉️ Envoyer le message
-        </button>
+        <p id="contactMessage"></p>
 
     </form>
 
@@ -166,19 +77,10 @@
 
 </main>
 
-
 <footer>
-
-    <h3>📚 Coin des Romans</h3>
-
-    <p>Un livre, une histoire, un nouveau voyage.</p>
-
-    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
-
+    <p>© 2026 <strong>Coin des Romans</strong> — Un livre, une histoire, un nouveau voyage.</p>
 </footer>
 
-
 <script src="script.js"></script>
-
 </body>
 </html>

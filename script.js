@@ -1,562 +1,204 @@
-/* =========================================
-   COIN DES ROMANS — JAVASCRIPT
-========================================= */
+/* ==========================================
+   COIN DES ROMANS
+   JavaScript principal
+========================================== */
 
 
-/* =========================================
-   THÈME
-========================================= */
+/* =========================
+   THÈME CLAIR / SOMBRE
+========================= */
 
 const themeButton = document.getElementById("themeButton");
 
-const savedTheme = localStorage.getItem("theme");
+function updateTheme() {
+    const theme = localStorage.getItem("theme");
 
-if (savedTheme === "dark") {
-    document.body.classList.add("dark");
+    if (theme === "dark") {
+        document.body.classList.add("dark");
 
-    if (themeButton) {
-        themeButton.textContent = "☀️";
+        if (themeButton) {
+            themeButton.textContent = "☀️";
+        }
+    } else {
+        document.body.classList.remove("dark");
+
+        if (themeButton) {
+            themeButton.textContent = "🌙";
+        }
     }
 }
 
-if (themeButton) {
+updateTheme();
 
+if (themeButton) {
     themeButton.addEventListener("click", () => {
 
         document.body.classList.toggle("dark");
 
-        const isDark =
-            document.body.classList.contains("dark");
-
-        localStorage.setItem(
-            "theme",
-            isDark ? "dark" : "light"
-        );
-
-        themeButton.textContent =
-            isDark ? "☀️" : "🌙";
-
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            themeButton.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            themeButton.textContent = "🌙";
+        }
     });
-
 }
 
 
-/* =========================================
+/* =========================
    FAVORIS
-========================================= */
+========================= */
 
 function getFavorites() {
-
-    try {
-
-        return JSON.parse(
-            localStorage.getItem("favorites")
-        ) || [];
-
-    } catch {
-
-        return [];
-
-    }
-
+    return JSON.parse(localStorage.getItem("favorites")) || [];
 }
-
 
 function saveFavorites(favorites) {
-
-    localStorage.setItem(
-        "favorites",
-        JSON.stringify(favorites)
-    );
-
+    localStorage.setItem("favorites", JSON.stringify(favorites));
 }
-
 
 function updateFavoriteCount() {
 
-    const countElement =
-        document.getElementById("favoriteCount");
+    const countElement = document.getElementById("favoriteCount");
 
-    if (!countElement) return;
+    if (countElement) {
+        countElement.textContent = getFavorites().length;
+    }
+}
 
-    countElement.textContent =
-        getFavorites().length;
+updateFavoriteCount();
 
+
+function getBookData(card) {
+
+    return {
+        title: card.dataset.title,
+        author: card.dataset.author,
+        genre: card.dataset.genre,
+        image: card.dataset.image,
+        summary: card.dataset.summary
+    };
 }
 
 
 function isFavorite(title) {
 
-    return getFavorites().some(
-        book => book.title === title
-    );
-
+    return getFavorites().some(book => book.title === title);
 }
 
 
 function updateFavoriteButtons() {
 
-    const buttons =
-        document.querySelectorAll(".favorite-btn");
+    document.querySelectorAll(".book-card").forEach(card => {
 
-    buttons.forEach(button => {
+        const button = card.querySelector(".favorite-btn");
 
-        const title =
-            button.dataset.title;
+        if (!button) return;
 
-        if (isFavorite(title)) {
-
+        if (isFavorite(card.dataset.title)) {
             button.classList.add("active");
-
-            button.textContent =
-                "❤️ Retirer";
-
+            button.textContent = "♥";
         } else {
-
             button.classList.remove("active");
-
-            button.textContent =
-                "❤️ Favori";
-
+            button.textContent = "♡";
         }
-
     });
-
 }
 
 
-/* =========================================
-   AJOUT / SUPPRESSION FAVORI
-========================================= */
+document.querySelectorAll(".favorite-btn").forEach(button => {
 
-document.addEventListener("click", event => {
+    button.addEventListener("click", (event) => {
 
-    const button =
-        event.target.closest(".favorite-btn");
+        event.stopPropagation();
 
-    if (!button) return;
+        const card = button.closest(".book-card");
 
-    const book = {
+        if (!card) return;
 
-        title: button.dataset.title,
+        const book = getBookData(card);
 
-        author: button.dataset.author,
+        let favorites = getFavorites();
 
-        genre: button.dataset.genre,
-
-        image: button.dataset.image
-
-    };
-
-    let favorites = getFavorites();
-
-
-    const index =
-        favorites.findIndex(
-            item => item.title === book.title
-        );
-
-
-    if (index !== -1) {
-
-        favorites.splice(index, 1);
-
-    } else {
-
-        favorites.push(book);
-
-    }
-
-
-    saveFavorites(favorites);
-
-    updateFavoriteCount();
-
-    updateFavoriteButtons();
-
-    renderFavorites();
-
-});
-
-
-/* =========================================
-   MODAL
-========================================= */
-
-const modal =
-    document.getElementById("romanModal");
-
-const modalImage =
-    document.getElementById("modalImage");
-
-const modalTitle =
-    document.getElementById("modalTitle");
-
-const modalAuthor =
-    document.getElementById("modalAuthor");
-
-const modalGenre =
-    document.getElementById("modalGenre");
-
-const modalSummary =
-    document.getElementById("modalSummary");
-
-const modalFavorite =
-    document.getElementById("modalFavorite");
-
-const modalShare =
-    document.getElementById("modalShare");
-
-let currentBook = null;
-
-
-function openModal(book) {
-
-    if (!modal) return;
-
-    currentBook = book;
-
-    modalImage.src = book.image;
-
-    modalImage.alt =
-        "Couverture de " + book.title;
-
-    modalTitle.textContent =
-        book.title;
-
-    modalAuthor.textContent =
-        book.author;
-
-    modalGenre.textContent =
-        book.genre;
-
-    modalSummary.textContent =
-        book.summary || "Aucun résumé disponible.";
-
-    modalGenre.className =
-        "tag " + getGenreClass(book.genre);
-
-
-    if (isFavorite(book.title)) {
-
-        modalFavorite.textContent =
-            "❤️ Retirer des favoris";
-
-    } else {
-
-        modalFavorite.textContent =
-            "❤️ Ajouter aux favoris";
-
-    }
-
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function closeModal() {
-
-    if (!modal) return;
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "";
-
-}
-
-
-document.addEventListener("click", event => {
-
-    const button =
-        event.target.closest(".read-more");
-
-    if (!button) return;
-
-
-    const book = {
-
-        title: button.dataset.title,
-
-        author: button.dataset.author,
-
-        genre: button.dataset.genre,
-
-        image: button.dataset.image,
-
-        summary: button.dataset.summary
-
-    };
-
-
-    openModal(book);
-
-});
-
-
-document.addEventListener("click", event => {
-
-    if (
-        event.target.classList.contains("close-modal") ||
-        event.target === modal
-    ) {
-
-        closeModal();
-
-    }
-
-});
-
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        closeModal();
-
-    }
-
-});
-
-
-/* =========================================
-   FAVORI DEPUIS LE MODAL
-========================================= */
-
-if (modalFavorite) {
-
-    modalFavorite.addEventListener("click", () => {
-
-        if (!currentBook) return;
-
-
-        let favorites =
-            getFavorites();
-
-
-        const index =
-            favorites.findIndex(
-                book =>
-                    book.title === currentBook.title
-            );
-
+        const index = favorites.findIndex(item => item.title === book.title);
 
         if (index !== -1) {
 
             favorites.splice(index, 1);
 
-            modalFavorite.textContent =
-                "❤️ Ajouter aux favoris";
-
         } else {
 
-            favorites.push(currentBook);
-
-            modalFavorite.textContent =
-                "❤️ Retirer des favoris";
-
+            favorites.push(book);
         }
-
 
         saveFavorites(favorites);
 
         updateFavoriteCount();
-
         updateFavoriteButtons();
 
-        renderFavorites();
-
-    });
-
-}
-
-
-/* =========================================
-   PARTAGER
-========================================= */
-
-if (modalShare) {
-
-    modalShare.addEventListener("click", async () => {
-
-        if (!currentBook) return;
-
-
-        const shareData = {
-
-            title: currentBook.title,
-
-            text:
-                currentBook.title +
-                " — découvert sur Coin des Romans",
-
-            url: window.location.href
-
-        };
-
-
-        try {
-
-            if (navigator.share) {
-
-                await navigator.share(shareData);
-
-            } else {
-
-                await navigator.clipboard.writeText(
-                    window.location.href
-                );
-
-                alert(
-                    "🔗 Le lien a été copié !"
-                );
-
-            }
-
-        } catch {
-
-            // L'utilisateur a simplement annulé le partage.
-
+        if (document.getElementById("favoritesGrid")) {
+            renderFavorites();
         }
-
     });
-
-}
-
-
-/* =========================================
-   CLASSE DES GENRES
-========================================= */
-
-function getGenreClass(genre) {
-
-    const classes = {
-
-        "Romance": "romance",
-
-        "Fantasy": "fantasy",
-
-        "Fantastique": "fantastic",
-
-        "Mystère": "mystery",
-
-        "Drame": "drama",
-
-        "Dark Romance": "dark-romance"
-
-    };
-
-    return classes[genre] || "";
-
-}
+});
 
 
-/* =========================================
-   RECHERCHE + FILTRES
-========================================= */
+updateFavoriteButtons();
 
-const searchInput =
-    document.getElementById("searchInput");
 
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
+/* =========================
+   RECHERCHE
+========================= */
 
-const cards =
-    document.querySelectorAll(
-        "#bookGrid .roman-card"
-    );
+const searchInput = document.getElementById("searchInput");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-const noResults =
-    document.getElementById("noResults");
-
-let activeFilter = "Tous";
-
+let currentFilter = "Tous";
 
 function filterBooks() {
 
+    const cards = document.querySelectorAll("#booksGrid .book-card");
+    const noResults = document.getElementById("noResults");
+
     if (!cards.length) return;
 
+    const search = searchInput
+        ? searchInput.value.toLowerCase().trim()
+        : "";
 
-    const search =
-        searchInput
-            ? searchInput.value
-                .toLowerCase()
-                .trim()
-            : "";
-
-
-    let visibleCount = 0;
-
+    let visible = 0;
 
     cards.forEach(card => {
 
-        const title =
-            card
-                .querySelector("h3")
-                ?.textContent
-                .toLowerCase() || "";
-
-
-        const author =
-            card
-                .querySelector(".author")
-                ?.textContent
-                .toLowerCase() || "";
-
-
-        const genre =
-            card.dataset.genre || "";
-
+        const title = card.dataset.title.toLowerCase();
+        const author = card.dataset.author.toLowerCase();
+        const genre = card.dataset.genre;
 
         const matchesSearch =
             title.includes(search) ||
             author.includes(search);
 
-
         const matchesGenre =
-            activeFilter === "Tous" ||
-            genre === activeFilter;
+            currentFilter === "Tous" ||
+            genre === currentFilter;
 
-
-        if (
-            matchesSearch &&
-            matchesGenre
-        ) {
-
+        if (matchesSearch && matchesGenre) {
             card.style.display = "";
-
-            visibleCount++;
-
+            visible++;
         } else {
-
             card.style.display = "none";
-
         }
-
     });
 
-
     if (noResults) {
-
-        noResults.style.display =
-            visibleCount === 0
-                ? "block"
-                : "none";
-
+        noResults.style.display = visible === 0 ? "block" : "none";
     }
-
 }
 
 
 if (searchInput) {
-
-    searchInput.addEventListener(
-        "input",
-        filterBooks
-    );
-
+    searchInput.addEventListener("input", filterBooks);
 }
 
 
@@ -564,83 +206,168 @@ filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        filterButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
         button.classList.add("active");
 
-        activeFilter =
-            button.dataset.filter;
+        currentFilter = button.dataset.filter;
 
         filterBooks();
-
     });
-
 });
 
 
-/* =========================================
-   FILTRE DEPUIS L'URL
-========================================= */
+/* =========================
+   GENRE DANS L'URL
+========================= */
 
-const params =
-    new URLSearchParams(
-        window.location.search
+const params = new URLSearchParams(window.location.search);
+const genreFromURL = params.get("genre");
+
+if (genreFromURL && filterButtons.length) {
+
+    const matchingButton = [...filterButtons].find(
+        button => button.dataset.filter === genreFromURL
     );
-
-const urlGenre =
-    params.get("genre");
-
-
-if (urlGenre && filterButtons.length) {
-
-    const matchingButton =
-        [...filterButtons].find(
-            button =>
-                button.dataset.filter === urlGenre
-        );
-
 
     if (matchingButton) {
 
-        filterButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
         matchingButton.classList.add("active");
 
-        activeFilter = urlGenre;
+        currentFilter = genreFromURL;
 
         filterBooks();
-
     }
-
 }
 
 
-/* =========================================
-   PAGE FAVORIS
-========================================= */
+/* =========================
+   MODAL
+========================= */
+
+const modal = document.getElementById("romanModal");
+const modalClose = document.querySelector(".modal-close");
+
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalAuthor = document.getElementById("modalAuthor");
+const modalGenre = document.getElementById("modalGenre");
+const modalSummary = document.getElementById("modalSummary");
+const modalFavorite = document.getElementById("modalFavorite");
+
+let selectedBook = null;
+
+
+document.querySelectorAll(".read-more").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const card = button.closest(".book-card");
+
+        if (!card || !modal) return;
+
+        selectedBook = getBookData(card);
+
+        modalImage.src = selectedBook.image;
+        modalImage.alt = selectedBook.title;
+
+        modalImage.onerror = function () {
+            this.style.display = "none";
+        };
+
+        modalTitle.textContent = selectedBook.title;
+        modalAuthor.textContent = selectedBook.author;
+        modalGenre.textContent = selectedBook.genre;
+        modalSummary.textContent = selectedBook.summary;
+
+        updateModalFavoriteButton();
+
+        modal.classList.add("show");
+    });
+});
+
+
+function updateModalFavoriteButton() {
+
+    if (!modalFavorite || !selectedBook) return;
+
+    if (isFavorite(selectedBook.title)) {
+        modalFavorite.textContent = "♥ Retirer des favoris";
+    } else {
+        modalFavorite.textContent = "♡ Ajouter aux favoris";
+    }
+}
+
+
+if (modalFavorite) {
+
+    modalFavorite.addEventListener("click", () => {
+
+        if (!selectedBook) return;
+
+        let favorites = getFavorites();
+
+        const index = favorites.findIndex(
+            book => book.title === selectedBook.title
+        );
+
+        if (index !== -1) {
+            favorites.splice(index, 1);
+        } else {
+            favorites.push(selectedBook);
+        }
+
+        saveFavorites(favorites);
+
+        updateFavoriteCount();
+        updateFavoriteButtons();
+        updateModalFavoriteButton();
+
+        if (document.getElementById("favoritesGrid")) {
+            renderFavorites();
+        }
+    });
+}
+
+
+if (modalClose) {
+    modalClose.addEventListener("click", () => {
+        modal.classList.remove("show");
+    });
+}
+
+
+if (modal) {
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+}
+
+
+/* =========================
+   FAVORIS PAGE
+========================= */
 
 function renderFavorites() {
 
-    const grid =
-        document.getElementById("favoritesGrid");
-
-    const empty =
-        document.getElementById("emptyFavorites");
-
+    const grid = document.getElementById("favoritesGrid");
+    const empty = document.getElementById("emptyFavorites");
 
     if (!grid) return;
 
-
-    const favorites =
-        getFavorites();
-
+    const favorites = getFavorites();
 
     grid.innerHTML = "";
-
 
     if (favorites.length === 0) {
 
@@ -649,153 +376,115 @@ function renderFavorites() {
         }
 
         return;
-
     }
-
 
     if (empty) {
         empty.style.display = "none";
     }
 
-
     favorites.forEach(book => {
 
-        const card =
-            document.createElement("article");
+        const card = document.createElement("article");
 
-        card.className =
-            "roman-card visible";
+        card.className = "book-card";
 
+        card.dataset.title = book.title;
+        card.dataset.author = book.author;
+        card.dataset.genre = book.genre;
+        card.dataset.image = book.image;
+        card.dataset.summary = book.summary;
 
         card.innerHTML = `
-
             <div class="book-cover">
-
                 <img
                     src="${book.image}"
-                    alt="Couverture de ${book.title}"
+                    alt="${book.title}"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
 
+                <button class="favorite-btn active" aria-label="Retirer des favoris">
+                    ♥
+                </button>
             </div>
 
-            <div class="roman-info">
-
-                <span class="tag ${getGenreClass(book.genre)}">
-                    ${book.genre}
-                </span>
-
+            <div class="book-info">
+                <span class="tag">${book.genre}</span>
                 <h3>${book.title}</h3>
-
-                <p class="author">
-                    ${book.author}
-                </p>
-
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn active"
-                        data-title="${book.title}"
-                        data-author="${book.author}"
-                        data-genre="${book.genre}"
-                        data-image="${book.image}"
-                    >
-                        ❤️ Retirer
-                    </button>
-
-                </div>
-
+                <p>${book.author}</p>
+                <button class="read-more">Découvrir →</button>
             </div>
-
         `;
 
-
         grid.appendChild(card);
-
     });
 
-}
 
+    grid.querySelectorAll(".favorite-btn").forEach(button => {
 
-/* =========================================
-   FORMULAIRE CONTACT
-========================================= */
+        button.addEventListener("click", () => {
 
-const contactForm =
-    document.getElementById("contactForm");
+            const card = button.closest(".book-card");
 
+            let favorites = getFavorites();
 
-if (contactForm) {
-
-    contactForm.addEventListener(
-        "submit",
-        event => {
-
-            event.preventDefault();
-
-            alert(
-                "✨ Merci pour ton message !"
+            favorites = favorites.filter(
+                book => book.title !== card.dataset.title
             );
 
-            contactForm.reset();
+            saveFavorites(favorites);
 
-        }
-    );
+            updateFavoriteCount();
+            renderFavorites();
+        });
+    });
 
+
+    grid.querySelectorAll(".read-more").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const card = button.closest(".book-card");
+
+            if (!modal) return;
+
+            selectedBook = getBookData(card);
+
+            modalImage.style.display = "block";
+            modalImage.src = selectedBook.image;
+            modalImage.alt = selectedBook.title;
+
+            modalTitle.textContent = selectedBook.title;
+            modalAuthor.textContent = selectedBook.author;
+            modalGenre.textContent = selectedBook.genre;
+            modalSummary.textContent = selectedBook.summary;
+
+            updateModalFavoriteButton();
+
+            modal.classList.add("show");
+        });
+    });
 }
 
-
-/* =========================================
-   INITIALISATION
-========================================= */
-
-updateFavoriteCount();
-
-updateFavoriteButtons();
 
 renderFavorites();
 
-filterBooks();
 
+/* =========================
+   CONTACT
+========================= */
 
-/* =========================================
-   ANIMATION DES CARTES
-========================================= */
+const contactForm = document.getElementById("contactForm");
+const contactMessage = document.getElementById("contactMessage");
 
-const animatedElements =
-    document.querySelectorAll(
-        ".roman-card, .genre-card, .featured-book, .author-card"
-    );
+if (contactForm) {
 
+    contactForm.addEventListener("submit", event => {
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+        event.preventDefault();
 
-            entries.forEach(entry => {
+        contactMessage.textContent =
+            "✨ Merci ! Ton message a bien été enregistré.";
 
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-animatedElements.forEach(element => {
-
-    observer.observe(element);
-
-});
+        contactForm.reset();
+    });
+}

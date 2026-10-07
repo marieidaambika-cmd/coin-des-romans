@@ -1,93 +1,46 @@
-/* =========================================
-   COIN DES ROMANS
-   THÈME CHOCOLAT & DORÉ
-========================================= */
-
 :root {
+    --cream: #f7efe3;
+    --cream-light: #fffaf3;
+    --cream-dark: #ead8c1;
 
-    --bg: #f4e8d6;
-    --bg-light: #fffaf2;
+    --chocolate: #2b1713;
+    --chocolate-2: #49251a;
+    --chocolate-3: #633524;
 
-    --brown-dark: #24110b;
-    --brown: #3d1f15;
-    --brown-light: #653b28;
+    --gold: #b8873c;
+    --gold-light: #e4c27d;
+    --gold-soft: #f2dfbb;
 
-    --gold: #c9973e;
-    --gold-light: #e8c779;
-    --gold-dark: #9b6b20;
+    --text: #34221d;
+    --muted: #806b61;
 
-    --cream: #fff8eb;
+    --white: #fffdf9;
+    --line: #e7d6bf;
 
-    --text: #321d15;
-    --muted: #786156;
-
-    --card: #fffaf2;
-
-    --border: #d8bd8f;
-
-    --shadow:
-        0 15px 40px rgba(57, 30, 17, 0.15);
+    --shadow: 0 20px 50px rgba(65, 36, 22, 0.13);
 }
-
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     font-family: "Poppins", sans-serif;
-
-    background: var(--bg);
-
+    background: var(--cream);
     color: var(--text);
-
-    transition:
-        background 0.3s,
-        color 0.3s;
+    min-height: 100vh;
 }
-
-
-body.dark {
-
-    --bg: #130906;
-    --bg-light: #1d0e0a;
-
-    --brown-dark: #090403;
-    --brown: #3b1c12;
-    --brown-light: #6e4028;
-
-    --gold: #d7a84e;
-    --gold-light: #f0d58b;
-    --gold-dark: #b9822d;
-
-    --cream: #fff5df;
-
-    --text: #f7ead6;
-    --muted: #c7ad96;
-
-    --card: #26130d;
-
-    --border: #5b3b25;
-
-    --shadow:
-        0 20px 50px rgba(0, 0, 0, 0.45);
-}
-
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
-
 
 button,
 input,
@@ -96,2112 +49,1004 @@ textarea {
 }
 
 
-/* =========================================
+/* =========================
    NAVBAR
-========================================= */
+========================= */
 
 .navbar {
-
-    min-height: 76px;
-
-    padding: 12px 6%;
+    height: 78px;
+    background: var(--chocolate);
+    color: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 25px;
-
+    padding: 0 6%;
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
-    background:
-        linear-gradient(
-            135deg,
-            #24100a,
-            #4a2418,
-            #28110b
-        );
-
-    color: white;
-
-    border-bottom:
-        2px solid var(--gold);
-
-    box-shadow:
-        0 5px 25px rgba(0,0,0,.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
 }
-
 
 .logo {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 29px;
-
-    font-weight: 700;
-
-    color: var(--gold-light);
-
-    white-space: nowrap;
-}
-
-
-.navbar nav {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
-}
-
-
-.navbar nav a {
-
-    padding: 10px 13px;
-
-    border-radius: 10px;
-
-    font-size: 14px;
-
-    transition: .25s;
-}
-
-
-.navbar nav a:hover,
-.navbar nav a.active {
-
-    color: var(--gold-light);
-
-    background:
-        rgba(218, 174, 87, .14);
-}
-
-
-#favoriteCount {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 20px;
-
-    height: 20px;
-
-    margin-left: 3px;
-
-    padding: 0 5px;
-
-    border-radius: 20px;
-
-    background: var(--gold);
-
-    color: var(--brown-dark);
-
-    font-size: 10px;
-
-    font-weight: 700;
-}
-
-
-#themeButton {
-
-    width: 40px;
-
-    height: 40px;
-
-    border-radius: 50%;
-
-    border: 1px solid var(--gold);
-
-    background:
-        rgba(255,255,255,.08);
-
-    color: var(--gold-light);
-
-    cursor: pointer;
-
-    font-size: 18px;
-
-    transition: .25s;
-}
-
-
-#themeButton:hover {
-
-    background: var(--gold);
-
-    color: var(--brown-dark);
-
-    transform: rotate(15deg);
-}
-
-
-/* =========================================
-   HERO
-========================================= */
-
-.hero {
-
-    min-height: 620px;
-
-    padding: 80px 8%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 60px;
-
-    background:
-
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(201,151,62,.38),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 10% 90%,
-            rgba(91,48,32,.18),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            var(--bg),
-            var(--bg-light)
-        );
-}
-
-
-.hero-content {
-
-    max-width: 650px;
-}
-
-
-.gold-badge {
-
-    display: inline-block;
-
-    padding: 8px 15px;
-
-    border-radius: 50px;
-
-    color: var(--gold-dark);
-
-    background:
-        rgba(201,151,62,.16);
-
-    border:
-        1px solid rgba(201,151,62,.4);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    margin-bottom: 18px;
-}
-
-
-.hero h1 {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(60px, 8vw, 105px);
-
-    line-height: .9;
-
-    margin-bottom: 30px;
-}
-
-
-.hero h1 span {
-
-    display: block;
-
-    color: var(--brown-light);
-}
-
-
-body.dark .hero h1 span {
-
-    color: var(--gold-light);
-}
-
-
-.hero p {
-
-    max-width: 600px;
-
-    color: var(--muted);
-
-    font-size: 17px;
-
-    line-height: 1.9;
-
-    margin-bottom: 30px;
-}
-
-
-.hero-buttons,
-.book-actions,
-.modal-buttons {
-
-    display: flex;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-}
-
-
-/* =========================================
-   BOUTONS
-========================================= */
-
-.main-btn,
-.outline-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 13px 21px;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    font-weight: 600;
-
-    transition: .25s;
-}
-
-
-.main-btn {
-
-    border:
-        1px solid var(--gold-dark);
-
-    background:
-        linear-gradient(
-            135deg,
-            #4b2418,
-            #70422b
-        );
-
-    color: white;
-}
-
-
-.main-btn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(77, 42, 25, .3),
-
-        0 0 15px
-        rgba(201,151,62,.2);
-}
-
-
-.outline-btn {
-
-    background: transparent;
-
-    color: var(--brown-light);
-
-    border:
-        1px solid var(--gold);
-}
-
-
-body.dark .outline-btn {
-
-    color: var(--gold-light);
-}
-
-
-.outline-btn:hover {
-
-    background: var(--gold);
-
-    color: var(--brown-dark);
-}
-
-
-/* =========================================
-   HERO LIVRE
-========================================= */
-
-.hero-book {
-
-    width: 330px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-}
-
-
-.hero-glow {
-
-    position: absolute;
-
-    width: 300px;
-
-    height: 300px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(201,151,62,.2);
-
-    filter: blur(40px);
-}
-
-
-.hero-cover {
-
-    position: relative;
-
-    width: 255px;
-
-    height: 390px;
-
-    overflow: hidden;
-
-    border-radius:
-        8px 18px 18px 8px;
-
-    border:
-        3px solid var(--gold);
-
-    transform: rotate(4deg);
-
-    box-shadow:
-        25px 30px 50px
-        rgba(44,22,14,.35),
-
-        0 0 25px
-        rgba(201,151,62,.25);
-
-    transition: .4s;
-}
-
-
-.hero-cover:hover {
-
-    transform:
-        rotate(0deg)
-        scale(1.04);
-}
-
-
-.hero-cover img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-.section {
-
-    padding: 90px 7%;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--bg),
-            var(--bg-light)
-        );
-}
-
-
-.section-alt {
-
-    background:
-        var(--bg-light);
-}
-
-
-.section-title {
-
-    text-align: center;
-
-    margin-bottom: 45px;
-}
-
-
-.section-title span {
-
-    color: var(--gold-dark);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-}
-
-
-body.dark .section-title span {
-
-    color: var(--gold-light);
-}
-
-
-.section-title h2 {
-
-    margin-top: 5px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 50px;
-
-    color: var(--brown);
-}
-
-
-body.dark .section-title h2 {
-
-    color: var(--gold-light);
-}
-
-
-/* =========================================
-   FEATURED
-========================================= */
-
-.featured-book {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        280px 1fr;
-
-    gap: 45px;
-
-    padding: 40px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--card),
-            var(--bg-light)
-        );
-
-    border:
-        1px solid var(--gold);
-
-    border-radius: 25px;
-
-    box-shadow: var(--shadow);
-}
-
-
-.featured-book::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-}
-
-
-.featured-cover {
-
-    height: 390px;
-
-    overflow: hidden;
-
-    border-radius: 12px;
-
-    border:
-        2px solid var(--gold);
-}
-
-
-.featured-cover img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-.featured-info {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-
-.featured-info h2 {
-
-    margin-top: 15px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 50px;
-
-    color: var(--brown);
-}
-
-
-body.dark .featured-info h2 {
-
-    color: var(--gold-light);
-}
-
-
-.featured-info h3 {
-
-    margin-bottom: 20px;
-
-    color: var(--gold-dark);
-}
-
-
-.featured-info p {
-
-    margin-bottom: 25px;
-
-    color: var(--muted);
-
-    line-height: 1.9;
-}
-
-
-/* =========================================
-   TAGS
-========================================= */
-
-.tag {
-
-    display: inline-block;
-
-    width: fit-content;
-
-    padding: 6px 11px;
-
-    border-radius: 30px;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-
-.romance {
-
-    background: #f1d5d9;
-
-    color: #713845;
-}
-
-
-.fantasy {
-
-    background: #e8dcb9;
-
-    color: #684d1f;
-}
-
-
-.fantastic {
-
-    background: #d8e7df;
-
-    color: #315d50;
-}
-
-
-.mystery {
-
-    background: #e7dac7;
-
-    color: #684a31;
-}
-
-
-.drama {
-
-    background: #ead6d8;
-
-    color: #713c45;
-}
-
-
-.dark-romance {
-
-    background: #382019;
-
-    color: var(--gold-light);
-}
-
-
-/* =========================================
-   GENRES
-========================================= */
-
-.genre-grid {
-
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-
-.genre-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--card),
-            var(--bg-light)
-        );
-
-    border:
-        1px solid var(--border);
-
-    box-shadow: var(--shadow);
-
-    transition: .3s;
-}
-
-
-.genre-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 3px;
-
-    background: var(--gold);
-
-    transform: scaleX(0);
-
-    transition: .3s;
-}
-
-
-.genre-card:hover {
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        var(--gold);
-
-    box-shadow:
-        var(--shadow),
-        0 0 20px
-        rgba(201,151,62,.18);
-}
-
-
-.genre-card:hover::after {
-
-    transform: scaleX(1);
-}
-
-
-.genre-icon {
-
-    font-size: 35px;
-}
-
-
-.genre-card h3 {
-
-    margin: 15px 0 7px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 29px;
-
-    color: var(--brown);
-}
-
-
-body.dark .genre-card h3 {
-
-    color: var(--gold-light);
-}
-
-
-.genre-card p {
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================
-   LIVRES
-========================================= */
-
-.book-grid {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.roman-card {
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--card),
-            var(--bg-light)
-        );
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 18px;
-
-    box-shadow: var(--shadow);
-
-    transition: .3s;
-}
-
-
-.roman-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        var(--gold);
-
-    box-shadow:
-        var(--shadow),
-        0 0 20px
-        rgba(201,151,62,.18);
-}
-
-
-.book-cover {
-
-    height: 350px;
-
-    overflow: hidden;
-
-    background:
-        #3b2117;
-
-    border-bottom:
-        2px solid var(--gold);
-}
-
-
-.book-cover img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition: .4s;
-}
-
-
-.roman-card:hover
-.book-cover img {
-
-    transform: scale(1.04);
-}
-
-
-.roman-info {
-
-    padding: 20px;
-}
-
-
-.roman-info h3 {
-
-    margin:
-        12px 0 3px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
+    font-family: "Cormorant Garamond", serif;
     font-size: 27px;
-
-    color: var(--brown);
-}
-
-
-body.dark .roman-info h3 {
-
+    font-weight: 700;
     color: var(--gold-light);
-}
-
-
-.author {
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    margin-bottom: 17px;
-}
-
-
-/* =========================================
-   BOUTONS LIVRES
-========================================= */
-
-.card-buttons {
 
     display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-
-.favorite-btn,
-.details-btn {
-
-    padding: 9px 11px;
-
-    border-radius: 9px;
-
-    border: none;
-
-    cursor: pointer;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    transition: .2s;
-}
-
-
-.favorite-btn {
-
-    background: #eadbc7;
-
-    color: #633b25;
-
-    border:
-        1px solid #caa76a;
-}
-
-
-.favorite-btn.active {
-
-    background: var(--gold);
-
-    color: var(--brown-dark);
-}
-
-
-.details-btn {
-
-    background:
-        var(--brown-light);
-
-    color: white;
-
-    border:
-        1px solid var(--gold-dark);
-}
-
-
-.favorite-btn:hover,
-.details-btn:hover {
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* =========================================
-   PAGE HEADER
-========================================= */
-
-.page-header {
-
-    padding: 90px 7%;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(201,151,62,.3),
-            transparent 45%
-        ),
-
-        var(--bg);
-}
-
-
-.page-header h1 {
-
-    margin: 15px 0;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 70px;
-
-    color: var(--brown);
-}
-
-
-body.dark .page-header h1 {
-
-    color: var(--gold-light);
-}
-
-
-.page-header p {
-
-    color: var(--muted);
-}
-
-
-/* =========================================
-   BIBLIOTHÈQUE
-========================================= */
-
-.library {
-
-    padding: 60px 7%;
-}
-
-
-.search-box {
-
-    max-width: 700px;
-
-    margin:
-        0 auto 30px;
-
-    display: flex;
-
     align-items: center;
-
-    gap: 12px;
-
-    padding: 14px 18px;
-
-    background: var(--card);
-
-    border:
-        1px solid var(--gold);
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(63,35,20,.08);
-}
-
-
-.search-box input {
-
-    width: 100%;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    color: var(--text);
-
-    font-size: 14px;
-}
-
-
-.filters {
-
-    max-width: 1000px;
-
-    margin:
-        0 auto 45px;
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
     gap: 9px;
 }
 
-
-.filter-btn {
-
-    padding: 10px 15px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 30px;
-
-    background: var(--card);
-
-    color: var(--text);
-
-    cursor: pointer;
-
-    transition: .2s;
+.logo span {
+    font-size: 25px;
 }
 
-
-.filter-btn.active,
-.filter-btn:hover {
-
-    background:
-        var(--brown-light);
-
-    border-color:
-        var(--gold);
-
-    color:
-        var(--gold-light);
-}
-
-
-.no-results,
-.empty-state {
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    color: var(--muted);
-}
-
-
-.no-results div,
-.empty-state div {
-
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-
-.empty-state h2 {
-
-    margin-bottom: 10px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 35px;
-
-    color: var(--brown);
-}
-
-
-body.dark .empty-state h2 {
-
-    color: var(--gold-light);
-}
-
-
-/* =========================================
-   AUTEURS
-========================================= */
-
-.author-grid {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+nav {
+    display: flex;
+    align-items: center;
     gap: 25px;
 }
 
+nav a {
+    font-size: 14px;
+    color: #eadfd7;
+    transition: .25s;
+    position: relative;
+}
 
-.author-card {
+nav a:hover,
+nav a.active {
+    color: var(--gold-light);
+}
 
-    text-align: center;
+nav a.active::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: var(--gold);
+    width: 100%;
+    left: 0;
+    bottom: -8px;
+}
 
-    padding: 30px 25px;
+#favoriteCount {
+    background: var(--gold);
+    color: var(--chocolate);
+    border-radius: 50px;
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 700;
+}
 
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--card),
-            var(--bg-light)
-        );
-
-    border:
-        1px solid var(--border);
-
-    box-shadow: var(--shadow);
-
-    transition: .3s;
+.theme-btn {
+    border: 1px solid rgba(255,255,255,.2);
+    background: var(--chocolate-2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 17px;
 }
 
 
-.author-card:hover {
+/* =========================
+   HERO
+========================= */
 
-    transform:
-        translateY(-7px);
-
-    border-color:
-        var(--gold);
-}
-
-
-.author-avatar {
-
-    width: 80px;
-
-    height: 80px;
-
-    margin: 0 auto 18px;
+.hero {
+    min-height: 610px;
+    padding: 75px 8%;
 
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
+    justify-content: space-between;
+    gap: 60px;
 
     background:
-        linear-gradient(
-            135deg,
-            var(--brown),
-            var(--brown-light)
-        );
-
-    color: var(--gold-light);
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 38px;
-
-    border:
-        2px solid var(--gold);
+        radial-gradient(circle at 80% 40%, rgba(184,135,60,.20), transparent 30%),
+        linear-gradient(135deg, #fffaf3 0%, #f2dfc8 100%);
 }
 
-
-.author-card h2 {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 30px;
-
-    color: var(--brown);
+.hero-content {
+    max-width: 680px;
 }
 
-
-body.dark .author-card h2 {
-
-    color: var(--gold-light);
+.eyebrow {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 13px;
 }
 
-
-.author-card > span {
-
-    display: block;
-
-    margin: 5px 0 12px;
-
-    color: var(--gold-dark);
-
-    font-size: 13px;
-
-    font-weight: 600;
-}
-
-
-.author-card p {
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   CONTACT
-========================================= */
-
-.contact-section {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    padding: 80px 7%;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-}
-
-
-.contact-info h2 {
-
-    margin:
-        15px 0;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 48px;
-
-    color: var(--brown);
-}
-
-
-body.dark .contact-info h2 {
-
-    color: var(--gold-light);
-}
-
-
-.contact-info > p {
-
-    color: var(--muted);
-
-    line-height: 1.9;
-
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 8vw, 110px);
+    line-height: .82;
+    color: var(--chocolate);
     margin-bottom: 30px;
 }
 
-
-.contact-details {
-
-    display: grid;
-
-    gap: 15px;
-}
-
-
-.contact-details div {
-
-    display: grid;
-
-    grid-template-columns:
-        40px 1fr;
-
-    gap: 3px 10px;
-
-    padding: 15px;
-
-    border-radius: 12px;
-
-    background: var(--card);
-
-    border:
-        1px solid var(--border);
-}
-
-
-.contact-details div:first-letter {
-
+.hero h1 span,
+.page-header h1 span {
     color: var(--gold);
 }
 
-
-.contact-details strong {
-
-    color: var(--brown);
+.hero p {
+    max-width: 570px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 16px;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
 
-body.dark .contact-details strong {
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: .25s;
+}
 
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-gold {
+    background: var(--chocolate);
+    color: var(--gold-light);
+    border: 1px solid var(--chocolate);
+}
+
+.btn-gold:hover {
+    background: var(--chocolate-2);
+}
+
+.btn-outline {
+    border: 1px solid var(--chocolate);
+    color: var(--chocolate);
+}
+
+.btn-outline:hover {
+    background: var(--chocolate);
     color: var(--gold-light);
 }
 
+.hero-book {
+    width: 300px;
+    height: 435px;
+    flex-shrink: 0;
 
-.contact-details span {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chocolate);
+    box-shadow: 25px 30px 60px rgba(43,23,19,.28);
 
-    color: var(--muted);
+    position: relative;
+    transform: rotate(3deg);
+}
 
-    font-size: 12px;
+.hero-book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.book-glow {
+    position: absolute;
+    inset: -50px;
+    background: radial-gradient(circle, var(--gold), transparent 65%);
+    opacity: .3;
 }
 
 
-.contact-form {
+/* =========================
+   SECTIONS
+========================= */
 
-    padding: 30px;
+.section {
+    padding: 85px 7%;
+}
 
-    border-radius: 20px;
-
-    background: var(--card);
-
-    border:
-        1px solid var(--gold);
-
-    box-shadow: var(--shadow);
-
+.section-heading {
     display: flex;
-
-    flex-direction: column;
-
-    gap: 9px;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 35px;
 }
 
+.section-heading h2,
+.about h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--chocolate);
+    font-size: 48px;
+    line-height: 1;
+}
 
-.contact-form label {
+.dark-section {
+    background: var(--chocolate);
+}
 
-    margin-top: 5px;
+.light-heading h2 {
+    color: var(--cream-light);
+}
 
-    color: var(--brown);
-
-    font-size: 13px;
-
+.small-link {
+    color: var(--gold);
     font-weight: 600;
 }
 
 
-body.dark .contact-form label {
+/* =========================
+   GENRES
+========================= */
 
-    color: var(--gold-light);
+.genres {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
 }
 
+.genre-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 25px 18px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.genre-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.genre-card span {
+    font-size: 28px;
+}
+
+.genre-card h3 {
+    margin: 12px 0 6px;
+    color: var(--chocolate);
+}
+
+.genre-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOOKS
+========================= */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.home-books {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.book-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(50,25,15,.07);
+    transition: .3s;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.book-cover {
+    height: 390px;
+    background: var(--chocolate-2);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.4);
+    background: rgba(43,23,19,.88);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 5;
+
+    transition: .2s;
+}
+
+.favorite-btn:hover,
+.favorite-btn.active {
+    background: var(--gold);
+    color: var(--chocolate);
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--gold-soft);
+    color: var(--chocolate-2);
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.book-info h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
+    color: var(--chocolate);
+    margin: 9px 0 2px;
+}
+
+.book-info p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.read-more {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 12px 0 0;
+}
+
+.cover-fallback {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+
+    background:
+        linear-gradient(145deg, var(--chocolate), var(--chocolate-3)),
+        var(--chocolate);
+}
+
+.cover-fallback::before {
+    content: "📖";
+    font-size: 55px;
+    position: absolute;
+    top: 35%;
+}
+
+.cover-fallback::after {
+    content: "Coin des Romans";
+    color: var(--gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 25px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    padding: 60px 8%;
+    background: var(--gold);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    color: var(--chocolate);
+}
+
+.stats span {
+    font-size: 13px;
+    color: var(--chocolate);
+    font-weight: 600;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--cream-light);
+}
+
+.about p {
+    color: var(--muted);
+    line-height: 2;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    text-align: center;
+    padding: 100px 20px 70px;
+    background:
+        radial-gradient(circle at center, rgba(184,135,60,.17), transparent 40%),
+        var(--cream-light);
+}
+
+.page-header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 75px;
+    color: var(--chocolate);
+    line-height: .9;
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    color: var(--muted);
+}
+
+
+/* =========================
+   LIBRARY
+========================= */
+
+.library {
+    padding: 70px 7%;
+}
+
+.search-box {
+    max-width: 700px;
+    margin: 0 auto 25px;
+
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 50px;
+
+    padding: 14px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+}
+
+.filter-btn {
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--text);
+    padding: 9px 17px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--chocolate);
+    color: var(--gold-light);
+    border-color: var(--chocolate);
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 50px;
+}
+
+
+/* =========================
+   AUTHORS
+========================= */
+
+.authors {
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.author-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 35px;
+    text-align: center;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.author-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.author-avatar {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--chocolate);
+    color: var(--gold-light);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.author-card h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--chocolate);
+    font-size: 30px;
+}
+
+.author-card p {
+    color: var(--muted);
+    margin: 7px 0 18px;
+}
+
+
+/* =========================
+   FAVORITES EMPTY
+========================= */
+
+.empty-favorites {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-favorites div {
+    font-size: 70px;
+    color: var(--gold);
+}
+
+.empty-favorites h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    color: var(--chocolate);
+    margin-bottom: 10px;
+}
+
+.empty-favorites p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 45px;
+}
+
+.contact-info {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.contact-card span {
+    font-size: 28px;
+}
+
+.contact-card h3 {
+    margin: 8px 0;
+    color: var(--chocolate);
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--chocolate);
+}
 
 .contact-form input,
 .contact-form textarea {
-
     width: 100%;
-
+    border: 1px solid var(--line);
+    background: var(--cream-light);
     padding: 13px;
-
-    border-radius: 10px;
-
-    border:
-        1px solid var(--border);
-
+    border-radius: 7px;
     outline: none;
-
-    background: var(--bg-light);
-
-    color: var(--text);
-
-    resize: vertical;
+    margin-bottom: 20px;
 }
-
 
 .contact-form input:focus,
 .contact-form textarea:focus {
+    border-color: var(--gold);
+}
 
-    border-color:
-        var(--gold);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(201,151,62,.12);
+#contactMessage {
+    margin-top: 15px;
+    color: var(--gold);
+    font-weight: 600;
 }
 
 
-.contact-form .main-btn {
-
-    margin-top: 10px;
-}
-
-
-/* =========================================
-   STATS
-========================================= */
-
-.stats-section {
-
-    padding: 60px 8%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-
-    text-align: center;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #21100b,
-            #4b2519,
-            #25110c
-        );
-
-    border-top:
-        2px solid var(--gold);
-
-    border-bottom:
-        2px solid var(--gold);
-}
-
-
-.stats-section strong {
-
-    display: block;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 50px;
-
-    color: var(--gold-light);
-}
-
-
-.stats-section span {
-
-    font-size: 13px;
-
-    color: #ead8bd;
-}
-
-
-/* =========================================
-   ABOUT
-========================================= */
-
-.about-section {
-
-    padding: 100px 8%;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(201,151,62,.13),
-            transparent 50%
-        ),
-
-        var(--bg);
-}
-
-
-.about-section h2 {
-
-    margin:
-        15px auto;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 50px;
-
-    color: var(--brown);
-}
-
-
-body.dark .about-section h2 {
-
-    color: var(--gold-light);
-}
-
-
-.about-section p {
-
-    max-width: 800px;
-
-    margin: 10px auto;
-
-    color: var(--muted);
-
-    line-height: 1.9;
-}
-
-
-/* =========================================
+/* =========================
    MODAL
-========================================= */
+========================= */
 
 .modal {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 2000;
-
     display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(25,12,9,.75);
+    z-index: 3000;
 
     align-items: center;
-
     justify-content: center;
 
-    padding: 20px;
-
-    background:
-        rgba(20, 9, 6, .84);
+    padding: 25px;
 }
 
-
 .modal.show {
-
     display: flex;
 }
 
-
 .modal-content {
-
-    position: relative;
-
-    width:
-        min(850px, 100%);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--card),
-            var(--bg-light)
-        );
-
-    border:
-        1px solid var(--gold);
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.5);
-}
-
-
-.close-modal {
-
-    position: absolute;
-
-    top: 12px;
-
-    right: 18px;
-
-    border: none;
-
-    background: transparent;
-
-    color: var(--gold-dark);
-
-    font-size: 32px;
-
-    cursor: pointer;
-}
-
-
-.modal-book {
+    max-width: 800px;
+    width: 100%;
+    background: var(--cream-light);
+    border-radius: 15px;
+    overflow: hidden;
 
     display: grid;
+    grid-template-columns: 280px 1fr;
 
-    grid-template-columns:
-        230px 1fr;
-
-    align-items: center;
-
-    gap: 35px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
 }
 
-
-.modal-book img {
-
-    width: 230px;
-
-    height: 340px;
-
+.modal-content > img {
+    width: 100%;
+    height: 430px;
     object-fit: cover;
-
-    border-radius: 8px;
-
-    border:
-        2px solid var(--gold);
+    background: var(--chocolate);
 }
 
-
-.modal-book h2 {
-
-    margin:
-        12px 0 0;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 43px;
-
-    color: var(--brown);
+.modal-text {
+    padding: 45px 35px;
 }
 
-
-body.dark .modal-book h2 {
-
-    color: var(--gold-light);
+.modal-text h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 45px;
+    color: var(--chocolate);
+    margin-top: 15px;
 }
 
-
-.modal-book h3 {
-
-    margin-bottom: 18px;
-
-    color: var(--gold-dark);
-}
-
-
-.modal-book p {
-
+.modal-text h4 {
+    color: var(--gold);
     margin-bottom: 25px;
-
-    color: var(--muted);
-
-    line-height: 1.8;
 }
 
+.modal-text p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
 
-/* =========================================
-   FOOTER
-========================================= */
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 12px;
 
-footer {
-
-    padding: 45px 20px;
-
-    text-align: center;
-
+    border: none;
+    background: var(--chocolate);
     color: white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #21100b,
-            #4b2519,
-            #25110c
-        );
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 
-    border-top:
-        2px solid var(--gold);
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 5;
 }
 
 
-footer h3 {
+/* =========================
+   FOOTER
+========================= */
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 30px;
-
-    color: var(--gold-light);
-}
-
-
-footer p {
-
-    margin-top: 8px;
-
-    color: #cdbfb7;
-
+footer {
+    padding: 30px;
+    text-align: center;
+    background: var(--chocolate);
+    color: #cdbfb8;
     font-size: 12px;
 }
 
-
-/* =========================================
-   ANIMATIONS
-========================================= */
-
-.roman-card,
-.genre-card,
-.featured-book,
-.author-card {
-
-    opacity: 0;
-
-    transform:
-        translateY(20px);
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
+footer strong {
+    color: var(--gold-light);
 }
 
 
-.roman-card.visible,
-.genre-card.visible,
-.featured-book.visible,
-.author-card.visible {
+/* =========================
+   DARK MODE
+========================= */
 
-    opacity: 1;
+body.dark {
+    --cream: #17100e;
+    --cream-light: #211512;
+    --cream-dark: #352019;
+    --white: #281a16;
 
-    transform:
-        translateY(0);
+    --text: #eee1d5;
+    --muted: #b7a59b;
+    --line: #4b3025;
+
+    background: #17100e;
+}
+
+body.dark .hero {
+    background:
+        radial-gradient(circle at 80% 40%, rgba(184,135,60,.18), transparent 30%),
+        #211512;
+}
+
+body.dark .hero h1,
+body.dark .section-heading h2,
+body.dark .about h2,
+body.dark .page-header h1,
+body.dark .book-info h3,
+body.dark .author-card h2,
+body.dark .empty-favorites h2 {
+    color: var(--gold-light);
+}
+
+body.dark .genre-card,
+body.dark .book-card,
+body.dark .author-card,
+body.dark .contact-card,
+body.dark .contact-form,
+body.dark .search-box {
+    background: #281a16;
+    border-color: #4b3025;
+}
+
+body.dark .genre-card h3,
+body.dark .book-info h3 {
+    color: var(--gold-light);
+}
+
+body.dark .page-header {
+    background: #211512;
+}
+
+body.dark .search-box input,
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    color: white;
+    background: #17100e;
+}
+
+body.dark .filter-btn {
+    background: #281a16;
+    color: var(--gold-light);
 }
 
 
-/* =========================================
+/* =========================
    RESPONSIVE
-========================================= */
+========================= */
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
+
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .genres {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .books-grid,
+    .home-books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .authors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
 
     .navbar {
-
-        flex-direction: column;
-
+        height: auto;
         padding: 15px 5%;
-
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
     .hero {
-
         flex-direction: column;
-
         text-align: center;
-
+        padding: 65px 6%;
     }
-
 
     .hero p {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
+        margin: auto;
     }
-
 
     .hero-buttons {
-
         justify-content: center;
-
     }
-
-
-    .featured-book {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .featured-cover {
-
-        width: 250px;
-
-        margin: auto;
-
-    }
-
-
-    .featured-info {
-
-        align-items: center;
-
-        text-align: center;
-
-    }
-
-
-    .genre-grid,
-    .book-grid,
-    .author-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .contact-section {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .logo {
-
-        font-size: 25px;
-
-    }
-
-
-    .navbar nav a {
-
-        font-size: 12px;
-
-        padding:
-            8px 7px;
-
-    }
-
-
-    .hero {
-
-        padding:
-            60px 6%;
-    }
-
-
-    .hero h1 {
-
-        font-size: 65px;
-
-    }
-
 
     .hero-book {
-
-        width: 100%;
-
+        width: 240px;
+        height: 350px;
     }
 
-
-    .hero-cover {
-
-        width: 220px;
-
-        height: 340px;
-
+    .section-heading {
+        align-items: start;
+        gap: 15px;
+        flex-direction: column;
     }
 
-
-    .section {
-
-        padding:
-            65px 5%;
+    .genres,
+    .books-grid,
+    .home-books,
+    .authors {
+        grid-template-columns: 1fr 1fr;
     }
 
-
-    .section-title h2 {
-
-        font-size: 42px;
-
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
-
-    .genre-grid,
-    .book-grid,
-    .author-grid {
-
+    .about,
+    .contact-section {
         grid-template-columns: 1fr;
-
     }
 
-
-    .featured-book {
-
-        padding: 25px;
-
-    }
-
-
-    .featured-info h2 {
-
-        font-size: 40px;
-
-    }
-
-
-    .stats-section {
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
-    .modal-book {
-
+    .modal-content {
         grid-template-columns: 1fr;
-
-        text-align: center;
-
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
+    .modal-content > img {
+        height: 300px;
+    }
+}
 
-    .modal-book img {
+@media (max-width: 500px) {
 
-        margin: auto;
-
+    .logo {
+        font-size: 22px;
     }
 
-
-    .modal-buttons {
-
-        justify-content: center;
-
+    .genres,
+    .books-grid,
+    .home-books,
+    .authors {
+        grid-template-columns: 1fr;
     }
-
 
     .page-header h1 {
-
         font-size: 55px;
-
     }
 
-
-    .contact-section {
-
-        padding:
-            60px 5%;
-    }
-
-
-    .contact-info h2 {
-
+    .section-heading h2,
+    .about h2 {
         font-size: 40px;
-
     }
 
+    .book-cover {
+        height: 420px;
+    }
 }

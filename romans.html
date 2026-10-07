@@ -1,50 +1,39 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coin des Romans — Romans</title>
+    <title>Romans — Coin des Romans</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-
 <header class="navbar">
 
     <a href="index.html" class="logo">
-        📚 <span>Coin des Romans</span>
+        <span>📖</span> Coin des Romans
     </a>
 
     <nav>
-
         <a href="index.html">Accueil</a>
-
         <a href="romans.html" class="active">Romans</a>
-
         <a href="auteurs.html">Auteurs</a>
-
         <a href="favoris.html">
-            ❤️ Favoris
-            <span id="favoriteCount">0</span>
+            ❤️ Favoris <span id="favoriteCount">0</span>
         </a>
-
         <a href="contact.html">Contact</a>
-
-        <button id="themeButton">🌙</button>
-
     </nav>
+
+    <button id="themeButton" class="theme-btn">🌙</button>
 
 </header>
 
@@ -53,14 +42,14 @@
 
 <section class="page-header">
 
-    <span class="gold-badge">
-        📚 Bibliothèque
-    </span>
+    <span class="eyebrow">BIBLIOTHÈQUE</span>
 
-    <h1>Nos Romans</h1>
+    <h1>
+        Tous les <span>Romans</span>
+    </h1>
 
     <p>
-        Trouve ton prochain coup de cœur parmi notre sélection.
+        Choisis ton univers et trouve ta prochaine lecture.
     </p>
 
 </section>
@@ -68,9 +57,11 @@
 
 <section class="library">
 
+    <!-- RECHERCHE -->
+
     <div class="search-box">
 
-        🔎
+        <span>🔎</span>
 
         <input
             type="text"
@@ -81,6 +72,8 @@
     </div>
 
 
+    <!-- FILTRES -->
+
     <div class="filters">
 
         <button class="filter-btn active" data-filter="Tous">
@@ -88,507 +81,482 @@
         </button>
 
         <button class="filter-btn" data-filter="Romance">
-            💕 Romance
+            Romance
         </button>
 
         <button class="filter-btn" data-filter="Fantasy">
-            🐉 Fantasy
+            Fantasy
         </button>
 
         <button class="filter-btn" data-filter="Fantastique">
-            🔮 Fantastique
+            Fantastique
         </button>
 
         <button class="filter-btn" data-filter="Mystère">
-            🔍 Mystère
+            Mystère
         </button>
 
         <button class="filter-btn" data-filter="Drame">
-            🎭 Drame
+            Drame
         </button>
 
-        <button class="filter-btn" data-filter="Dark Romance">
-            🖤 Dark Romance
+        <button class="filter-btn" data-filter="Romance sombre">
+            Romance sombre
         </button>
 
     </div>
 
 
-    <div class="book-grid" id="bookGrid">
+    <!-- LIVRES -->
+
+    <div id="booksGrid" class="books-grid">
 
 
-        <!-- 1 -->
+        <!-- FOURTH WING -->
 
-        <article class="roman-card" data-genre="Fantasy">
+        <article
+            class="book-card"
+            data-title="Fourth Wing"
+            data-author="Rebecca Yarros"
+            data-genre="Fantasy"
+            data-image="https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg"
+            data-summary="Une jeune femme entre dans une académie militaire où elle doit affronter des dragons, des rivalités et des secrets."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
-                    alt="Children of Virtue and Vengeance"
+                    src="https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg"
+                    alt="Fourth Wing"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag fantasy">Fantasy</span>
+                <span class="tag">Fantasy</span>
 
-                <h3>Children of Virtue and Vengeance</h3>
+                <h3>Fourth Wing</h3>
 
-                <p class="author">Tomi Adeyemi</p>
+                <p>Rebecca Yarros</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Children of Virtue and Vengeance"
-                        data-author="Tomi Adeyemi"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Children of Virtue and Vengeance"
-                        data-author="Tomi Adeyemi"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
-                        data-summary="Zélie doit affronter les conséquences de ses choix et protéger son peuple."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 2 -->
+        <!-- IRON FLAME -->
 
-        <article class="roman-card" data-genre="Fantasy">
+        <article
+            class="book-card"
+            data-title="Iron Flame"
+            data-author="Rebecca Yarros"
+            data-genre="Fantasy"
+            data-image="https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg"
+            data-summary="La suite de l'univers de Fourth Wing, avec de nouveaux défis, des secrets et des dangers toujours plus importants."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
-                    alt="The Nightblood Prince"
+                    src="https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg"
+                    alt="Iron Flame"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag fantasy">Fantasy</span>
+                <span class="tag">Fantasy</span>
 
-                <h3>The Nightblood Prince</h3>
+                <h3>Iron Flame</h3>
 
-                <p class="author">Molly X. Chang</p>
+                <p>Rebecca Yarros</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="The Nightblood Prince"
-                        data-author="Molly X. Chang"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="The Nightblood Prince"
-                        data-author="Molly X. Chang"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
-                        data-summary="Une jeune fille doit affronter une prophétie, deux princes et une guerre imminente."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 3 -->
+        <!-- DIVINE RIVALS -->
+<article class="book-card"
+    data-title="Divine Rivals"
+    data-author="Rebecca Ross"
+    data-genre="Romance"
+    data-image="https://covers.openlibrary.org/b/isbn/9781250857439-L.jpg"
+    data-summary="Deux rivaux communiquent mystérieusement par lettres alors qu'une guerre entre dieux transforme leur quotidien.">
 
-        <article class="roman-card" data-genre="Fantasy">
+    <div class="book-cover">
+        <img
+            src="https://covers.openlibrary.org/b/isbn/9781250857439-L.jpg"
+            alt="Divine Rivals"
+            onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
+        >
+
+        <button class="favorite-btn">♡</button>
+    </div>
+
+    <div class="book-info">
+        <span class="tag">Romance</span>
+        <h3>Divine Rivals</h3>
+        <p>Rebecca Ross</p>
+        <button class="read-more">Découvrir →</button>
+    </div>
+</article>
+
+        <!-- THE LOVE HYPOTHESIS -->
+
+        <article
+            class="book-card"
+            data-title="The Love Hypothesis"
+            data-author="Ali Hazelwood"
+            data-genre="Romance"
+            data-image="https://covers.openlibrary.org/b/isbn/9780593336823-L.jpg"
+            data-summary="Une chercheuse se retrouve dans une situation inattendue avec un collègue qu'elle pensait impossible à approcher."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
-                    alt="Children of Anguish and Anarchy"
+                    src="https://covers.openlibrary.org/b/isbn/9780593336823-L.jpg"
+                    alt="The Love Hypothesis"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag fantasy">Fantasy</span>
+                <span class="tag">Romance</span>
 
-                <h3>Children of Anguish and Anarchy</h3>
+                <h3>The Love Hypothesis</h3>
 
-                <p class="author">Tomi Adeyemi</p>
+                <p>Ali Hazelwood</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Children of Anguish and Anarchy"
-                        data-author="Tomi Adeyemi"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Children of Anguish and Anarchy"
-                        data-author="Tomi Adeyemi"
-                        data-genre="Fantasy"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
-                        data-summary="Une nouvelle menace apparaît alors que le destin d'Orïsha est en jeu."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 4 -->
+        <!-- A GOOD GIRL'S GUIDE TO MURDER -->
+<article class="book-card"
+    data-title="A Good Girl's Guide to Murder"
+    data-author="Holly Jackson"
+    data-genre="Mystère"
+    data-image="https://covers.openlibrary.org/b/isbn/9781984896391-L.jpg"
+    data-summary="Une lycéenne enquête sur une ancienne affaire et découvre progressivement que l'histoire officielle cache encore des secrets.">
 
-        <article class="roman-card" data-genre="Romance">
+    <div class="book-cover">
+        <img
+    src="https://covers.openlibrary.org/b/isbn/9781984896391-L.jpg"
+    alt="A Good Girl's Guide to Murder"
+            onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
+        >
+
+        <button class="favorite-btn">♡</button>
+    </div>
+
+    <div class="book-info">
+        <span class="tag">Mystère</span>
+        <h3>A Good Girl's Guide to Murder</h3>
+        <p>Holly Jackson</p>
+        <button class="read-more">Découvrir →</button>
+    </div>
+</article>
+        
+        <!-- ONCE UPON A BROKEN HEART -->
+<article class="book-card"
+    data-title="Once Upon a Broken Heart"
+    data-author="Stephanie Garber"
+    data-genre="Fantastique"
+    data-image="https://covers.openlibrary.org/b/isbn/9781250268396-L.jpg"
+    data-summary="Une jeune fille entre dans un univers magique où les promesses, les secrets et les choix peuvent changer son destin.">
+
+    <div class="book-cover">
+        <img
+            src="https://covers.openlibrary.org/b/isbn/9781250268396-L.jpg"
+            alt="Once Upon a Broken Heart"
+            onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
+        >
+
+        <button class="favorite-btn">♡</button>
+    </div>
+
+    <div class="book-info">
+        <span class="tag">Fantastique</span>
+        <h3>Once Upon a Broken Heart</h3>
+        <p>Stephanie Garber</p>
+        <button class="read-more">Découvrir →</button>
+    </div>
+</article>
+    
+        <!-- THE INHERITANCE GAMES -->
+
+        <article
+            class="book-card"
+            data-title="The Inheritance Games"
+            data-author="Jennifer Lynn Barnes"
+            data-genre="Mystère"
+            data-image="https://covers.openlibrary.org/b/isbn/9780759557635-L.jpg"
+            data-summary="Une adolescente hérite d'une immense fortune mais doit résoudre une série d'énigmes pour comprendre pourquoi elle a été choisie."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9780593579930-L.jpg"
+                    src="https://covers.openlibrary.org/b/isbn/9780759557635-L.jpg"
+                    alt="The Inheritance Games"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
+                >
+
+                <button class="favorite-btn">♡</button>
+
+            </div>
+
+            <div class="book-info">
+
+                <span class="tag">Mystère</span>
+
+                <h3>The Inheritance Games</h3>
+
+                <p>Jennifer Lynn Barnes</p>
+
+                <button class="read-more">
+                    Découvrir →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- BETTER THAN THE MOVIES -->
+
+        <article
+            class="book-card"
+            data-title="Better Than the Movies"
+            data-author="Lynn Painter"
+            data-genre="Romance"
+            data-image="https://covers.openlibrary.org/b/isbn/9781534467637-L.jpg"
+            data-summary="Une histoire romantique pleine de situations amusantes, de rêves et de sentiments qui ne se déroulent pas exactement comme prévu."
+        >
+
+            <div class="book-cover">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781534467637-L.jpg"
                     alt="Better Than the Movies"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag romance">Romance</span>
+                <span class="tag">Romance</span>
 
                 <h3>Better Than the Movies</h3>
 
-                <p class="author">Lynn Painter</p>
+                <p>Lynn Painter</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Better Than the Movies"
-                        data-author="Lynn Painter"
-                        data-genre="Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593579930-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Better Than the Movies"
-                        data-author="Lynn Painter"
-                        data-genre="Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593579930-L.jpg"
-                        data-summary="Une jeune fille rêve d'une histoire d'amour digne d'un film, mais la réalité pourrait être encore meilleure."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 5 -->
+        <!-- ========================= -->
+        <!-- ROMANCE SOMBRE -->
+        <!-- ========================= -->
 
-        <article class="roman-card" data-genre="Romance">
+
+        <!-- BELLADONNA -->
+
+        <article
+            class="book-card"
+            data-title="Belladonna"
+            data-author="Adalyn Grace"
+            data-genre="Romance sombre"
+            data-image="https://covers.openlibrary.org/b/isbn/9780316158459-L.jpg"
+            data-summary="Une romance gothique et mystérieuse dans laquelle Signa découvre les secrets inquiétants de Thorn Grove et se retrouve liée à un monde surnaturel."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9781250802756-L.jpg"
-                    alt="Today Tonight Tomorrow"
+                    src="https://covers.openlibrary.org/b/isbn/9780316158459-L.jpg"
+                    alt="Belladonna"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag romance">Romance</span>
+                <span class="tag">Romance sombre</span>
 
-                <h3>Today Tonight Tomorrow</h3>
+                <h3>Belladonna</h3>
 
-                <p class="author">Rachel Lynn Solomon</p>
+                <p>Adalyn Grace</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Today Tonight Tomorrow"
-                        data-author="Rachel Lynn Solomon"
-                        data-genre="Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250802756-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Today Tonight Tomorrow"
-                        data-author="Rachel Lynn Solomon"
-                        data-genre="Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781250802756-L.jpg"
-                        data-summary="Deux rivaux de lycée doivent mettre leur compétition de côté pendant une nuit qui pourrait changer leur relation."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 6 -->
+        <!-- FOXGLOVE -->
 
-        <article class="roman-card" data-genre="Fantastique">
+        <article
+            class="book-card"
+            data-title="Foxglove"
+            data-author="Adalyn Grace"
+            data-genre="Romance sombre"
+            data-image="https://covers.openlibrary.org/b/isbn/9780316158541-L.jpg"
+            data-summary="Une nouvelle aventure gothique dans l'univers de Belladonna, pleine de mystères, de secrets et de sentiments compliqués."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9780062694420-L.jpg"
-                    alt="Legendborn"
+                    src="https://covers.openlibrary.org/b/isbn/9780316158541-L.jpg"
+                    alt="Foxglove"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag fantastic">Fantastique</span>
+                <span class="tag">Romance sombre</span>
 
-                <h3>Legendborn</h3>
+                <h3>Foxglove</h3>
 
-                <p class="author">Tracy Deonn</p>
+                <p>Adalyn Grace</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Legendborn"
-                        data-author="Tracy Deonn"
-                        data-genre="Fantastique"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780062694420-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Legendborn"
-                        data-author="Tracy Deonn"
-                        data-genre="Fantastique"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780062694420-L.jpg"
-                        data-summary="Bree découvre un monde secret lié à la magie et à une mystérieuse organisation."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 7 -->
+        <!-- WISTERIA -->
 
-        <article class="roman-card" data-genre="Mystère">
+        <article
+            class="book-card"
+            data-title="Wisteria"
+            data-author="Adalyn Grace"
+            data-genre="Romance sombre"
+            data-image="https://covers.openlibrary.org/b/isbn/9781399726085-L.jpg"
+            data-summary="Une conclusion gothique et romantique à la trilogie Belladonna, avec de nouveaux secrets et une atmosphère mystérieuse."
+        >
 
             <div class="book-cover">
 
                 <img
-                    src="https://covers.openlibrary.org/b/isbn/9780593379851-L.jpg"
-                    alt="A Good Girl's Guide to Murder"
+                    src="https://covers.openlibrary.org/b/isbn/9781399726085-L.jpg"
+                    alt="Wisteria"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
                 >
+
+                <button class="favorite-btn">♡</button>
 
             </div>
 
-            <div class="roman-info">
+            <div class="book-info">
 
-                <span class="tag mystery">Mystère</span>
+                <span class="tag">Romance sombre</span>
 
-                <h3>A Good Girl's Guide to Murder</h3>
+                <h3>Wisteria</h3>
 
-                <p class="author">Holly Jackson</p>
+                <p>Adalyn Grace</p>
 
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="A Good Girl's Guide to Murder"
-                        data-author="Holly Jackson"
-                        data-genre="Mystère"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593379851-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="A Good Girl's Guide to Murder"
-                        data-author="Holly Jackson"
-                        data-genre="Mystère"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593379851-L.jpg"
-                        data-summary="Pip décide de rouvrir une affaire ancienne pour découvrir ce qui s'est réellement passé."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
+                <button class="read-more">
+                    Découvrir →
+                </button>
 
             </div>
 
         </article>
 
 
-        <!-- 8 -->
+        <!-- LEONID PETROV -->
+<article class="book-card"
+    data-title="Leonid Petrov, Le Prince des enfers"
+    data-author="Nanou Ad"
+    data-genre="Romance sombre"
+    data-summary="Une histoire sombre centrée sur Anna Miller et Leonid Petrov.">
 
-        <article class="roman-card" data-genre="Drame">
+    <div class="book-cover">
 
-            <div class="book-cover">
+        <img
+            src="https://books.google.com/books/content?id=oD45EQAAQBAJ&printsec=frontcover&img=1&zoom=1"
+            alt="Leonid Petrov, Le Prince des enfers"
+            onerror="this.style.display='none'; this.parentElement.classList.add('cover-fallback');"
+        >
 
-                <img
-                    src="https://covers.openlibrary.org/b/isbn/9780593378182-L.jpg"
-                    alt="Five Feet Apart"
-                >
+        <button class="favorite-btn">♡</button>
 
-            </div>
+    </div>
 
-            <div class="roman-info">
+    <div class="book-info">
 
-                <span class="tag drama">Drame</span>
+        <span class="tag">Romance sombre</span>
 
-                <h3>Five Feet Apart</h3>
+        <h3>Leonid Petrov</h3>
 
-                <p class="author">Rachael Lippincott</p>
+        <p>Nanou Ad</p>
 
-                <div class="card-buttons">
+        <button class="read-more">
+            Découvrir →
+        </button>
 
-                    <button
-                        class="favorite-btn"
-                        data-title="Five Feet Apart"
-                        data-author="Rachael Lippincott"
-                        data-genre="Drame"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593378182-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
+    </div>
 
-                    <button
-                        class="details-btn read-more"
-                        data-title="Five Feet Apart"
-                        data-author="Rachael Lippincott"
-                        data-genre="Drame"
-                        data-image="https://covers.openlibrary.org/b/isbn/9780593378182-L.jpg"
-                        data-summary="Deux adolescents se rencontrent dans un contexte difficile et développent une relation qui change leur quotidien."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 9 -->
-
-        <article class="roman-card" data-genre="Dark Romance">
-
-            <div class="book-cover">
-
-                <img
-                    src="https://covers.openlibrary.org/b/isbn/9781460760004-L.jpg"
-                    alt="Haunting Adeline"
-                >
-
-            </div>
-
-            <div class="roman-info">
-
-                <span class="tag dark-romance">Dark Romance</span>
-
-                <h3>Haunting Adeline</h3>
-
-                <p class="author">H. D. Carlton</p>
-
-                <div class="card-buttons">
-
-                    <button
-                        class="favorite-btn"
-                        data-title="Haunting Adeline"
-                        data-author="H. D. Carlton"
-                        data-genre="Dark Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781460760004-L.jpg"
-                    >
-                        ❤️ Favori
-                    </button>
-
-                    <button
-                        class="details-btn read-more"
-                        data-title="Haunting Adeline"
-                        data-author="H. D. Carlton"
-                        data-genre="Dark Romance"
-                        data-image="https://covers.openlibrary.org/b/isbn/9781460760004-L.jpg"
-                        data-summary="Une histoire sombre et mystérieuse autour d'une vieille maison, de secrets et d'une relation dangereuse."
-                    >
-                        🔎 Détails
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
+</article>
+        
 
     </div>
 
 
-    <div id="noResults" class="no-results">
-
-        <div>📚</div>
-
-        <h3>Aucun roman trouvé</h3>
-
-        <p>
-            Essaie un autre titre ou un autre genre.
-        </p>
-
-    </div>
+    <p id="noResults" class="no-results">
+        Aucun roman ne correspond à ta recherche.
+    </p>
 
 </section>
 
@@ -597,48 +565,49 @@
 
 <footer>
 
-    <h3>📚 Coin des Romans</h3>
-
-    <p>Un livre, une histoire, un nouveau voyage.</p>
-
-    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
+    <p>
+        © 2026 <strong>Coin des Romans</strong>
+        — Un livre, une histoire, un nouveau voyage.
+    </p>
 
 </footer>
 
+
+<!-- MODALE -->
 
 <div id="romanModal" class="modal">
 
     <div class="modal-content">
 
-        <button class="close-modal">&times;</button>
+        <button class="modal-close">
+            &times;
+        </button>
 
-        <div class="modal-book">
+        <img
+            id="modalImage"
+            src=""
+            alt="Couverture"
+        >
 
-            <img id="modalImage" src="" alt="Couverture du roman">
+        <div class="modal-text">
 
-            <div>
+            <span
+                id="modalGenre"
+                class="tag"
+            ></span>
 
-                <span id="modalGenre" class="tag"></span>
+            <h2 id="modalTitle"></h2>
 
-                <h2 id="modalTitle"></h2>
+            <h4 id="modalAuthor"></h4>
 
-                <h3 id="modalAuthor"></h3>
+            <p id="modalSummary"></p>
 
-                <p id="modalSummary"></p>
-
-                <div class="modal-buttons">
-
-                    <button id="modalFavorite" class="main-btn">
-                        ❤️ Ajouter aux favoris
-                    </button>
-
-                    <button id="modalShare" class="outline-btn">
-                        🔗 Partager
-                    </button>
-
-                </div>
-
-            </div>
+            <button
+                id="modalFavorite"
+                class="btn btn-gold"
+            >
+                ❤️ Ajouter aux favoris
+            </button>
 
         </div>
 
@@ -651,3 +620,4 @@
 
 </body>
 </html>
+```
