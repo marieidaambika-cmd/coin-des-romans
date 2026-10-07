@@ -3,283 +3,574 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin des Romans</title>
+
+    <title>Coin des Romans — Accueil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-    <a href="index.html" class="logo">📚 <span>Coin des Romans</span></a>
+
+    <a href="index.html" class="logo">
+        📚 <span>Coin des Romans</span>
+    </a>
 
     <nav>
         <a href="index.html" class="active">Accueil</a>
         <a href="romans.html">Romans</a>
         <a href="auteurs.html">Auteurs</a>
-        <a href="favoris.html">❤️ Favoris</a>
+        <a href="favoris.html">
+            ❤️ Favoris
+            <span id="favoriteCount">0</span>
+        </a>
         <a href="contact.html">Contact</a>
+
+        <button id="themeButton" aria-label="Changer le thème">🌙</button>
     </nav>
 
-    <button id="themeButton" class="theme-btn">🌙</button>
 </header>
+
 
 <main>
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
+
     <div class="hero-content">
-        <span class="small-title">✨ BIENVENUE DANS TON UNIVERS</span>
+
+        <span class="gold-badge">
+            ✨ Bienvenue dans ton univers littéraire
+        </span>
 
         <h1>
-            Une histoire.
-            <br>
-            <span>Un autre monde.</span>
+            Le <span>Coin des Romans</span>
         </h1>
 
         <p>
-            Découvre des romans captivants, des personnages inoubliables
-            et des histoires qui te feront voyager sans quitter ton fauteuil.
+            Découvre de nouvelles histoires, explore différents univers
+            et trouve le roman qui te donnera envie de tourner
+            encore une page.
         </p>
 
         <div class="hero-buttons">
-            <a href="romans.html" class="btn">📖 Explorer les romans</a>
-            <a href="auteurs.html" class="btn secondary">✍️ Découvrir les auteurs</a>
+
+            <a href="romans.html" class="main-btn">
+                📖 Découvrir les romans
+            </a>
+
+            <a href="#genres" class="outline-btn">
+                ✨ Explorer les genres
+            </a>
+
         </div>
+
     </div>
+
 
     <div class="hero-book">
-        <div class="floating-star star1">✦</div>
-        <div class="floating-star star2">✧</div>
 
-        <div class="book-cover">
-            <span>📖</span>
-            <small>COIN DES ROMANS</small>
-            <h2>Une histoire<br>commence ici...</h2>
-            <div class="book-line"></div>
-            <p>Lire • Rêver • Voyager</p>
+        <div class="hero-glow"></div>
+
+        <div class="hero-cover">
+
+            <img
+                src="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                alt="The Nightblood Prince"
+            >
+
         </div>
+
     </div>
+
 </section>
 
 
-<section class="roman-du-jour">
-    <div class="roman-jour-content">
-        <span>📖 À LIRE AUJOURD'HUI</span>
-        <h2>Le Secret de la Maison</h2>
+<!-- ================= ROMAN DU MOMENT ================= -->
 
-        <p>
-            Une jeune fille découvre une vieille maison abandonnée et décide
-            de percer les secrets qui entourent cet étrange endroit.
-        </p>
-
-        <a href="romans.html" class="btn">Découvrir le roman →</a>
-    </div>
-
-    <div class="roman-jour-icon">
-        🏚️
-    </div>
-</section>
 <section class="section">
+
     <div class="section-title">
-        <span>⭐ SÉLECTION</span>
-        <h2>Romans populaires</h2>
-        <p>Quelques histoires sélectionnées pour commencer ton voyage.</p>
-    </div>
 
-    <div class="roman-grid">
+        <span>🌟 À découvrir</span>
 
-        <article class="roman-card" data-genre="Mystère">
-            <div class="roman-cover">
-                <button class="favorite-btn" data-title="Le Secret de la Maison">♡</button>
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Le Secret de la Maison" class="book-img">
-            </div>
-
-            <div class="roman-info">
-                <span class="genre">Mystère</span>
-                <h3>Le Secret de la Maison</h3>
-                <p>Emma Laurent</p>
-
-                <button
-                    class="read-more"
-                    data-title="Le Secret de la Maison"
-                    data-author="Emma Laurent"
-                    data-summary="Une jeune fille découvre une vieille maison abandonnée et décide de comprendre les secrets qui entourent cet étrange endroit.">
-                    Lire le résumé →
-                </button>
-            </div>
-        </article>
-
-
-        <article class="roman-card" data-genre="Romance">
-            <div class="roman-cover">
-                <button class="favorite-btn" data-title="Un Été Inoubliable">♡</button>
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Un Été Inoubliable" class="book-img">
-            </div>
-
-            <div class="roman-info">
-                <span class="genre">Romance</span>
-                <h3>Un Été Inoubliable</h3>
-                <p>Clara Martin</p>
-
-                <button
-                    class="read-more"
-                    data-title="Un Été Inoubliable"
-                    data-author="Clara Martin"
-                    data-summary="Pendant un été plein de découvertes, deux jeunes personnes apprennent à mieux se connaître et voient leur quotidien changer.">
-                    Lire le résumé →
-                </button>
-            </div>
-        </article>
-
-
-        <article class="roman-card" data-genre="Fantastique">
-            <div class="roman-cover">
-                <button class="favorite-btn" data-title="Le Royaume Perdu">♡</button>
-                <img src="https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=800&auto=format&fit=crop" alt="Le Royaume Perdu" class="book-img">
-            </div>
-
-            <div class="roman-info">
-                <span class="genre">Fantastique</span>
-                <h3>Le Royaume Perdu</h3>
-                <p>Lucas Bernard</p>
-
-                <button
-                    class="read-more"
-                    data-title="Le Royaume Perdu"
-                    data-author="Lucas Bernard"
-                    data-summary="Un mystérieux royaume oublié réapparaît après plusieurs siècles. Une jeune héroïne doit découvrir pourquoi son existence a été cachée.">
-                    Lire le résumé →
-                </button>
-            </div>
-        </article>
+        <h2>Roman du moment</h2>
 
     </div>
+
+
+    <div class="featured-book">
+
+        <div class="featured-cover">
+
+            <img
+                src="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                alt="The Nightblood Prince"
+            >
+
+        </div>
+
+
+        <div class="featured-info">
+
+            <span class="tag fantasy">Fantasy</span>
+
+            <h2>The Nightblood Prince</h2>
+
+            <h3>Molly X. Chang</h3>
+
+            <p>
+                Deux royaumes sont au bord de la guerre et une jeune fille
+                destinée à devenir impératrice se retrouve prise entre
+                deux princes. Une histoire mêlant magie, destin,
+                aventure et romance.
+            </p>
+
+            <div class="book-actions">
+
+                <button
+                    class="main-btn read-more"
+                    data-title="The Nightblood Prince"
+                    data-author="Molly X. Chang"
+                    data-genre="Fantasy"
+                    data-image="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                    data-summary="Deux royaumes sont au bord de la guerre. Fei doit affronter une prophétie, son destin et deux princes rivaux."
+                >
+                    🔎 Voir les détails
+                </button>
+
+                <a
+                    href="romans.html"
+                    class="outline-btn"
+                >
+                    📚 Voir les romans
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GENRES ================= -->
+
+<section class="section section-alt" id="genres">
+
+    <div class="section-title">
+
+        <span>📚 Choisis ton ambiance</span>
+
+        <h2>Explorer les genres</h2>
+
+    </div>
+
+
+    <div class="genre-grid">
+
+        <a href="romans.html?genre=Romance" class="genre-card">
+
+            <div class="genre-icon">💕</div>
+
+            <h3>Romance</h3>
+
+            <p>
+                Des histoires d'amour, de rencontres
+                et de sentiments.
+            </p>
+
+        </a>
+
+
+        <a href="romans.html?genre=Fantasy" class="genre-card">
+
+            <div class="genre-icon">🐉</div>
+
+            <h3>Fantasy</h3>
+
+            <p>
+                Magie, royaumes, créatures
+                et aventures extraordinaires.
+            </p>
+
+        </a>
+
+
+        <a href="romans.html?genre=Fantastique" class="genre-card">
+
+            <div class="genre-icon">🔮</div>
+
+            <h3>Fantastique</h3>
+
+            <p>
+                Quand l'impossible devient
+                soudainement réel.
+            </p>
+
+        </a>
+
+
+        <a href="romans.html?genre=Mystère" class="genre-card">
+
+            <div class="genre-icon">🔍</div>
+
+            <h3>Mystère</h3>
+
+            <p>
+                Secrets, énigmes, enquêtes
+                et révélations.
+            </p>
+
+        </a>
+
+
+        <a href="romans.html?genre=Drame" class="genre-card">
+
+            <div class="genre-icon">🎭</div>
+
+            <h3>Drame</h3>
+
+            <p>
+                Des histoires fortes,
+                profondes et émouvantes.
+            </p>
+
+        </a>
+
+
+        <a href="romans.html?genre=Dark%20Romance" class="genre-card">
+
+            <div class="genre-icon">🖤</div>
+
+            <h3>Dark Romance</h3>
+
+            <p>
+                Des histoires plus sombres,
+                intenses et mystérieuses.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SÉLECTION ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>🔥 Notre sélection</span>
+
+        <h2>Quelques romans à découvrir</h2>
+
+    </div>
+
+
+    <div class="book-grid">
+
+
+        <!-- LIVRE 1 -->
+
+        <article class="roman-card">
+
+            <div class="book-cover">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
+                    alt="Children of Virtue and Vengeance"
+                >
+
+            </div>
+
+            <div class="roman-info">
+
+                <span class="tag fantasy">Fantasy</span>
+
+                <h3>Children of Virtue and Vengeance</h3>
+
+                <p class="author">Tomi Adeyemi</p>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="favorite-btn"
+                        data-title="Children of Virtue and Vengeance"
+                        data-author="Tomi Adeyemi"
+                        data-genre="Fantasy"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
+                    >
+                        ❤️ Favori
+                    </button>
+
+                    <button
+                        class="details-btn read-more"
+                        data-title="Children of Virtue and Vengeance"
+                        data-author="Tomi Adeyemi"
+                        data-genre="Fantasy"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250170978-L.jpg"
+                        data-summary="Zélie doit faire face aux conséquences des événements précédents alors que le destin d'Orïsha est toujours en jeu."
+                    >
+                        🔎 Détails
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- LIVRE 2 -->
+
+        <article class="roman-card">
+
+            <div class="book-cover">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                    alt="The Nightblood Prince"
+                >
+
+            </div>
+
+            <div class="roman-info">
+
+                <span class="tag fantasy">Fantasy</span>
+
+                <h3>The Nightblood Prince</h3>
+
+                <p class="author">Molly X. Chang</p>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="favorite-btn"
+                        data-title="The Nightblood Prince"
+                        data-author="Molly X. Chang"
+                        data-genre="Fantasy"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                    >
+                        ❤️ Favori
+                    </button>
+
+                    <button
+                        class="details-btn read-more"
+                        data-title="The Nightblood Prince"
+                        data-author="Molly X. Chang"
+                        data-genre="Fantasy"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250891637-L.jpg"
+                        data-summary="Une jeune fille doit faire face à une prophétie, à deux princes et à une guerre qui menace son royaume."
+                    >
+                        🔎 Détails
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- LIVRE 3 -->
+
+        <article class="roman-card">
+
+            <div class="book-cover">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
+                    alt="Children of Anguish and Anarchy"
+                >
+
+            </div>
+
+            <div class="roman-info">
+
+                <span class="tag drama">Drame</span>
+
+                <h3>Children of Anguish and Anarchy</h3>
+
+                <p class="author">Tomi Adeyemi</p>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="favorite-btn"
+                        data-title="Children of Anguish and Anarchy"
+                        data-author="Tomi Adeyemi"
+                        data-genre="Drame"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
+                    >
+                        ❤️ Favori
+                    </button>
+
+                    <button
+                        class="details-btn read-more"
+                        data-title="Children of Anguish and Anarchy"
+                        data-author="Tomi Adeyemi"
+                        data-genre="Drame"
+                        data-image="https://covers.openlibrary.org/b/isbn/9781250174948-L.jpg"
+                        data-summary="Zélie fait face à une nouvelle menace alors que l'avenir de son peuple est en jeu."
+                    >
+                        🔎 Détails
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
 
     <div class="center-button">
-        <a href="romans.html" class="outline-btn">Voir toute la bibliothèque →</a>
-    </div>
-</section>
 
-<section class="categories">
-    <div class="section-title">
-        <span>🧭 EXPLORE</span>
-        <h2>Choisis ton univers</h2>
-        <p>Quelle histoire vas-tu découvrir aujourd'hui ?</p>
-    </div>
-
-    <div class="category-grid">
-
-        <a href="romans.html" class="category-card">
-            <div class="category-icon">🔍</div>
-            <h3>Mystère</h3>
-            <p>Secrets et énigmes</p>
-        </a>
-
-        <a href="romans.html" class="category-card">
-            <div class="category-icon">❤️</div>
-            <h3>Romance</h3>
-            <p>Histoires de cœur</p>
-        </a>
-
-        <a href="romans.html" class="category-card">
-            <div class="category-icon">🏰</div>
-            <h3>Fantastique</h3>
-            <p>Des mondes extraordinaires</p>
-        </a>
-
-        <a href="romans.html" class="category-card">
-            <div class="category-icon">🎭</div>
-            <h3>Drame</h3>
-            <p>Des histoires intenses</p>
+        <a href="romans.html" class="main-btn">
+            📚 Voir tous les romans
         </a>
 
     </div>
+
 </section>
 
 
-<section class="stats">
+<!-- ================= STATISTIQUES ================= -->
+
+<section class="stats-section">
+
     <div>
-        <strong>6+</strong>
+        <strong>20+</strong>
         <span>Romans</span>
     </div>
 
     <div>
         <strong>6</strong>
-        <span>Auteurs</span>
-    </div>
-
-    <div>
-        <strong>4</strong>
         <span>Genres</span>
     </div>
 
     <div>
-        <strong>∞</strong>
-        <span>Histoires</span>
+        <strong>15+</strong>
+        <span>Auteurs</span>
     </div>
+
+    <div>
+        <strong>❤️</strong>
+        <span>Favoris</span>
+    </div>
+
 </section>
 
 
-<section class="about">
-    <div class="about-content">
-        <span>📚 NOTRE UNIVERS</span>
+<!-- ================= À PROPOS ================= -->
 
-        <h2>Plus qu'un site,<br>un endroit pour rêver.</h2>
+<section class="about-section">
 
-        <p>
-            Le Coin des Romans est un espace consacré aux passionnés de lecture.
-            Notre objectif est de permettre aux lecteurs de découvrir facilement
-            différents romans, genres et auteurs.
-        </p>
+    <span class="gold-badge">
+        📖 À propos
+    </span>
 
-        <a href="romans.html" class="btn">Explorer la bibliothèque →</a>
-    </div>
+    <h2>
+        Pourquoi le Coin des Romans ?
+    </h2>
 
-    <div class="about-decoration">
-        <span>“</span>
-        <p>Chaque livre ouvre<br>une nouvelle porte.</p>
-    </div>
+    <p>
+        Le Coin des Romans est un espace consacré à la découverte
+        de nouvelles histoires, de nouveaux auteurs et de différents
+        univers littéraires.
+    </p>
+
+    <p>
+        Le site permet de rechercher des romans, de les classer
+        par genre et de conserver ses préférés.
+    </p>
+
 </section>
 
 </main>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <div class="footer-content">
 
-        <div>
-            <h3>📚 Coin des Romans</h3>
-            <p>Un livre, une histoire, un nouveau voyage.</p>
-        </div>
+    <h3>📚 Coin des Romans</h3>
 
-        <div class="footer-links">
-            <a href="index.html">Accueil</a>
-            <a href="romans.html">Romans</a>
-            <a href="auteurs.html">Auteurs</a>
-            <a href="contact.html">Contact</a>
-        </div>
+    <p>
+        Un livre, une histoire, un nouveau voyage.
+    </p>
 
-    </div>
+    <p>
+        © 2026 Coin des Romans — Créé avec ❤️
+    </p>
 
-    <div class="footer-bottom">
-        © 2026 Coin des Romans — Tous droits réservés.
-    </div>
 </footer>
 
 
-<div class="modal" id="romanModal">
+<!-- ================= MODAL ================= -->
+
+<div id="romanModal" class="modal">
+
     <div class="modal-content">
 
-        <button class="close-modal" aria-label="Fermer">×</button>
+        <button class="close-modal">
+            &times;
+        </button>
 
-        <span>📖 ROMAN</span>
+        <div class="modal-book">
 
-        <h2 id="modalTitle"></h2>
+            <img
+                id="modalImage"
+                src=""
+                alt="Couverture du roman"
+            >
 
-        <p class="modal-author" id="modalAuthor"></p>
+            <div>
 
-        <p id="modalSummary"></p>
+                <span id="modalGenre" class="tag"></span>
+
+                <h2 id="modalTitle"></h2>
+
+                <h3 id="modalAuthor"></h3>
+
+                <p id="modalSummary"></p>
+
+                <div class="modal-buttons">
+
+                    <button
+                        id="modalFavorite"
+                        class="main-btn"
+                    >
+                        ❤️ Ajouter aux favoris
+                    </button>
+
+                    <button
+                        id="modalShare"
+                        class="outline-btn"
+                    >
+                        🔗 Partager
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
 </div>
 
 

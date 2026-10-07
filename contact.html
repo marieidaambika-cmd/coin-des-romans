@@ -1,55 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Coin des Romans</title>
+
+    <title>Coin des Romans — Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <header class="navbar">
-    <a class="logo" href="index.html">📚 Coin des Romans</a>
+
+    <a href="index.html" class="logo">
+        📚 <span>Coin des Romans</span>
+    </a>
+
     <nav>
+
         <a href="index.html">Accueil</a>
+
         <a href="romans.html">Romans</a>
+
         <a href="auteurs.html">Auteurs</a>
-        <a href="favoris.html">❤️ Favoris (<span id="favoriteCount">0</span>)</a>
+
+        <a href="favoris.html">
+            ❤️ Favoris
+            <span id="favoriteCount">0</span>
+        </a>
+
         <a href="contact.html" class="active">Contact</a>
+
+        <button id="themeButton">🌙</button>
+
     </nav>
-    <button id="themeButton" class="theme-btn">🌙</button>
+
 </header>
 
-<section class="page-banner">
-    <span>✉️ ÉCRIVEZ-NOUS</span>
+
+<main>
+
+<section class="page-header">
+
+    <span class="gold-badge">💌 Parlons lecture</span>
+
     <h1>Contact</h1>
-    <p>Une suggestion, une question ou une recommandation de livre ?</p>
+
+    <p>
+        Une suggestion de roman ? Une question ?
+        Écris-nous.
+    </p>
+
 </section>
 
-<section class="section" style="max-width: 600px; margin: 0 auto;">
-    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
-        <div>
-            <label for="name" style="display:block; margin-bottom: 0.5rem;">Nom complet</label>
-            <input type="text" id="name" required placeholder="Votre nom" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+
+<section class="contact-section">
+
+    <div class="contact-info">
+
+        <span class="gold-badge">📚 Coin des Romans</span>
+
+        <h2>
+            Une idée ou un roman à proposer ?
+        </h2>
+
+        <p>
+            Le site est pensé pour évoluer.
+            Tu peux utiliser ce formulaire pour proposer
+            un roman, un auteur ou une amélioration.
+        </p>
+
+        <div class="contact-details">
+
+            <div>
+                📖
+                <strong>Romans</strong>
+                <span>Propose ton prochain coup de cœur</span>
+            </div>
+
+            <div>
+                ✍️
+                <strong>Auteurs</strong>
+                <span>Découvre et recommande des auteurs</span>
+            </div>
+
+            <div>
+                💡
+                <strong>Suggestions</strong>
+                <span>Partage tes idées pour le site</span>
+            </div>
+
         </div>
-        <div>
-            <label for="email" style="display:block; margin-bottom: 0.5rem;">Adresse E-mail</label>
-            <input type="email" id="email" required placeholder="votre@email.com" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
-        </div>
-        <div>
-            <label for="message" style="display:block; margin-bottom: 0.5rem;">Message</label>
-            <textarea id="message" rows="5" required placeholder="Votre message..." style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-        </div>
-        <button type="submit" class="outline-btn" style="cursor: pointer; padding: 0.8rem 1.5rem;">Envoyer le message</button>
+
+    </div>
+
+
+    <form id="contactForm" class="contact-form">
+
+        <label for="name">
+            Nom
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Ton nom"
+            required
+        >
+
+
+        <label for="email">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="ton@email.com"
+            required
+        >
+
+
+        <label for="subject">
+            Sujet
+        </label>
+
+        <input
+            type="text"
+            id="subject"
+            placeholder="Sujet de ton message"
+            required
+        >
+
+
+        <label for="message">
+            Message
+        </label>
+
+        <textarea
+            id="message"
+            rows="6"
+            placeholder="Écris ton message ici..."
+            required
+        ></textarea>
+
+
+        <button type="submit" class="main-btn">
+            ✉️ Envoyer le message
+        </button>
+
     </form>
+
 </section>
+
+</main>
+
 
 <footer>
+
     <h3>📚 Coin des Romans</h3>
+
     <p>Un livre, une histoire, un nouveau voyage.</p>
-    <p>© 2026 Coin des Romans</p>
+
+    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>

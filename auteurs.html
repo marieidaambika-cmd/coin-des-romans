@@ -1,68 +1,212 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auteurs - Coin des Romans</title>
+
+    <title>Coin des Romans — Auteurs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <header class="navbar">
-    <a class="logo" href="index.html">📚 Coin des Romans</a>
+
+    <a href="index.html" class="logo">
+        📚 <span>Coin des Romans</span>
+    </a>
+
     <nav>
+
         <a href="index.html">Accueil</a>
+
         <a href="romans.html">Romans</a>
+
         <a href="auteurs.html" class="active">Auteurs</a>
-        <a href="favoris.html">❤️ Favoris (<span id="favoriteCount">0</span>)</a>
+
+        <a href="favoris.html">
+            ❤️ Favoris
+            <span id="favoriteCount">0</span>
+        </a>
+
         <a href="contact.html">Contact</a>
+
+        <button id="themeButton">🌙</button>
+
     </nav>
-    <button id="themeButton" class="theme-btn">🌙</button>
+
 </header>
 
-<section class="page-banner">
-    <span>✍️ PLUMES & TALENTS</span>
+
+<main>
+
+<section class="page-header">
+
+    <span class="gold-badge">✍️ Plumes à découvrir</span>
+
     <h1>Nos Auteurs</h1>
-    <p>Découvrez les esprits passionnés derrière vos histoires préférées.</p>
+
+    <p>
+        Découvre les écrivains derrière tes prochaines histoires préférées.
+    </p>
+
 </section>
+
 
 <section class="section">
-    <div class="roman-grid">
-        <article class="roman-card" style="text-align: center; padding: 1.5rem;">
-            <div style="width: 100px; height: 100px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Emma Laurent" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-            <h3>Emma Laurent</h3>
-            <span class="genre">Mystère</span>
-            <p style="font-size:0.9rem; margin-top:0.5rem; color:var(--text-muted,#777);">Spécialiste des récits énigmatiques et des vieilles demeures pleines de secrets.</p>
+
+    <div class="author-grid">
+
+
+        <article class="author-card">
+
+            <div class="author-avatar">T</div>
+
+            <h2>Tomi Adeyemi</h2>
+
+            <span>Fantasy</span>
+
+            <p>
+                Autrice de la série Legacy of Orïsha,
+                connue pour ses univers fantastiques.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
         </article>
 
-        <article class="roman-card" style="text-align: center; padding: 1.5rem;">
-            <div style="width: 100px; height: 100px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Lucas Bernard" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-            <h3>Lucas Bernard</h3>
-            <span class="genre">Fantastique</span>
-            <p style="font-size:0.9rem; margin-top:0.5rem; color:var(--text-muted,#777);">Auteur passionné d'univers imaginaires, de royaumes oubliés et de magies anciennes.</p>
+
+        <article class="author-card">
+
+            <div class="author-avatar">M</div>
+
+            <h2>Molly X. Chang</h2>
+
+            <span>Fantasy</span>
+
+            <p>
+                Autrice de romans mêlant fantasy,
+                magie, destin et romance.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
         </article>
 
-        <article class="roman-card" style="text-align: center; padding: 1.5rem;">
-            <div style="width: 100px; height: 100px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Clara Martin" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-            <h3>Clara Martin</h3>
-            <span class="genre">Romance</span>
-            <p style="font-size:0.9rem; margin-top:0.5rem; color:var(--text-muted,#777);">Elle écrit des histoires d'amour poignantes et lumineuses au fil des saisons.</p>
+
+        <article class="author-card">
+
+            <div class="author-avatar">L</div>
+
+            <h2>Lynn Painter</h2>
+
+            <span>Romance</span>
+
+            <p>
+                Autrice de romances contemporaines
+                pleines d'humour et d'émotions.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
         </article>
+
+
+        <article class="author-card">
+
+            <div class="author-avatar">H</div>
+
+            <h2>Holly Jackson</h2>
+
+            <span>Mystère</span>
+
+            <p>
+                Autrice connue pour ses romans
+                policiers et ses intrigues pleines de mystères.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
+        </article>
+
+
+        <article class="author-card">
+
+            <div class="author-avatar">T</div>
+
+            <h2>Tracy Deonn</h2>
+
+            <span>Fantastique</span>
+
+            <p>
+                Autrice de Legendborn, une histoire
+                mêlant magie, légendes et aventure.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
+        </article>
+
+
+        <article class="author-card">
+
+            <div class="author-avatar">R</div>
+
+            <h2>Rachael Lippincott</h2>
+
+            <span>Drame</span>
+
+            <p>
+                Autrice de romances et de drames
+                destinés principalement aux jeunes lecteurs.
+            </p>
+
+            <a href="romans.html" class="outline-btn">
+                📚 Voir ses romans
+            </a>
+
+        </article>
+
     </div>
+
 </section>
 
+</main>
+
+
 <footer>
+
     <h3>📚 Coin des Romans</h3>
+
     <p>Un livre, une histoire, un nouveau voyage.</p>
-    <p>© 2026 Coin des Romans</p>
+
+    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>

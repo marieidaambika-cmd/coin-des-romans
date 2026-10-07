@@ -1,57 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Favoris - Coin des Romans</title>
+
+    <title>Coin des Romans — Favoris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <header class="navbar">
-    <a class="logo" href="index.html">📚 Coin des Romans</a>
+
+    <a href="index.html" class="logo">
+        📚 <span>Coin des Romans</span>
+    </a>
+
     <nav>
+
         <a href="index.html">Accueil</a>
+
         <a href="romans.html">Romans</a>
+
         <a href="auteurs.html">Auteurs</a>
-        <a href="favoris.html" class="active">❤️ Favoris (<span id="favoriteCount">0</span>)</a>
+
+        <a href="favoris.html" class="active">
+            ❤️ Favoris
+            <span id="favoriteCount">0</span>
+        </a>
+
         <a href="contact.html">Contact</a>
+
+        <button id="themeButton">🌙</button>
+
     </nav>
-    <button id="themeButton" class="theme-btn">🌙</button>
+
 </header>
 
-<section class="page-banner">
-    <span>❤️ VOTRE SÉLECTION</span>
-    <h1>Mes Romans Favoris</h1>
-    <p>Retrouvez ici toutes les histoires que vous avez enregistrées.</p>
-</section>
 
-<section class="section">
-    <!-- Grille qui recevra automatiquement les cartes en favoris -->
-    <div class="roman-grid" id="favoritesGrid"></div>
+<main>
 
-    <!-- Message si aucun favori -->
-    <p id="noFavorites" class="no-results" style="display: none; text-align: center; font-size: 1.2rem; margin: 3rem 0;">
-        💔 Vous n'avez encore aucun roman dans vos favoris.<br>
-        <a href="romans.html" style="color: var(--gold, #d4af37); text-decoration: underline; margin-top: 1rem; display: inline-block;">Découvrir notre catalogue →</a>
+<section class="page-header">
+
+    <span class="gold-badge">❤️ Ta bibliothèque personnelle</span>
+
+    <h1>Mes Favoris</h1>
+
+    <p>
+        Retrouve ici les romans que tu as décidé de garder.
     </p>
+
 </section>
+
+
+<section class="library">
+
+    <div id="favoritesGrid" class="book-grid"></div>
+
+
+    <div id="emptyFavorites" class="empty-state">
+
+        <div>📚</div>
+
+        <h2>Ta bibliothèque est encore vide</h2>
+
+        <p>
+            Ajoute tes romans préférés et ils apparaîtront ici.
+        </p>
+
+        <a href="romans.html" class="main-btn">
+            📖 Découvrir les romans
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
 
 <footer>
+
     <h3>📚 Coin des Romans</h3>
+
     <p>Un livre, une histoire, un nouveau voyage.</p>
-    <p>© 2026 Coin des Romans</p>
+
+    <p>© 2026 Coin des Romans — Créé avec ❤️</p>
+
 </footer>
 
-<div class="modal" id="romanModal">
-    <div class="modal-content">
-        <button class="close-modal">×</button>
-        <h2 id="modalTitle"></h2>
-        <p id="modalAuthor"></p>
-        <p id="modalSummary"></p>
-    </div>
-</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
